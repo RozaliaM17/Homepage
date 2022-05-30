@@ -1,0 +1,402 @@
+@use "../partials/_main-styles" as *;
+
+.page-header {
+	width: 100%;
+	@include flex (column, 0px, center, flex-start);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 2;
+	font-family: $lexend;
+	background-color: transparent;
+	transition: background-color 1s ease-out;
+	color: #000;
+
+	&::after {
+		content: "";
+		width: 100%;
+		border-bottom: 2px solid #f1f1f1;
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+	}
+
+	&.scroll {
+		background-color: rgba(0, 0, 0, 0.8);
+		color: #fff;
+
+		.desktop-header {
+			padding: 20px 0px 30px 0px;
+		}
+	}
+
+	.desktop-header {
+		@include flex (row, 10px, unset, flex-end);
+		width: 95%;
+		margin: 0 auto;
+		max-height: 15%;
+		padding: 30px 0px 40px 0px;
+
+		@include tablet {
+			padding: 20px 0px;
+			justify-content: space-between;
+			width: 90%;
+
+			&::after {
+				content: "";
+				width: 100%;
+				border-bottom: 2px solid #f1f1f1;
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+			}
+		}
+
+		@include big-mobile {
+			width: 95%;
+		}
+
+		.page-logo {
+			@include flex (row, 2px, flex-start, flex-end);
+			width: 25%;
+
+			@include tablet {
+				width: unset;
+			}
+
+			.page-logo-text {
+				font-size: 30px;
+				font-weight: $bold;
+
+				@include monitor {
+					font-size: 40px;
+				}
+
+				@include big-monitor {
+					font-size: 45px;
+				}
+			}
+		}
+
+		.mobile-menu-open-icon {
+			display: none;
+
+			.fa-bars {
+				margin-bottom: 5px;
+				font-size: 30px;
+			}
+
+			&.active {
+				display: block;
+			}
+		}
+
+		.header-navigation {
+			@include flex (row, 0px, flex-start, center);
+			width: 70%;
+
+			@media only screen and (max-width: 1120px) {
+				justify-content: center;
+			}
+
+			.navigation-list {
+				width: 70%;
+				@include flex (row, 0px, space-between, center);
+
+				@media only screen and (max-width: 1300px) {
+					width: 90%;
+					justify-content: space-around;
+				}
+
+				.navigation-list-item {
+					@include flex (column, 4px, flex-start, center);
+					position: relative;
+
+					.navigation-item-link {
+						font-size: 16px;
+						padding: 5px;
+	
+						cursor: pointer;
+
+						@include big-monitor {
+							font-size: 22px;
+						}
+						@include monitor {
+							font-size: 20px;
+						}
+
+						@media only screen and (max-width: 1120px) {
+							font-size: 14px;
+						}
+					}
+
+					.dropdown-item-link { 
+						@include flex (row, 4px, center, center);
+						transition: .3s;
+
+						.fa-angle-down {
+							font-size: 11px;
+
+							@include big-monitor {
+								font-size: 18px;
+							}
+
+							@include monitor {
+								font-size: 16px;
+							}
+						}
+					}
+
+					.list-item-dropdown {
+						position: absolute;
+						top: 35px;
+						left: 0px;
+						visibility: hidden;
+						opacity: 0;
+						padding: 10px;
+						width: 240px;
+						transition: all 0.3s ease-out;
+						z-index: 1;
+						color: #000;
+
+						@media only screen and (max-width: 1120px) {
+							width: 190px;
+						}
+
+						@include big-monitor {
+							width: 280px;
+						}
+
+						.dropdown-list {
+							@include flex (column, 0px, center, center);
+							background-color: #fff;
+							box-shadow: 0px 0px 30px rgb(127 137 161 / 25%);
+							border-radius: 5px;
+							list-style: none;
+
+							.dropdown-list-item {
+								cursor: pointer;
+								width: 100%;
+								padding: 20px 15px;
+								text-align: flex-start;
+								font-size: 16px;
+
+								&:hover {
+									font-size: 18px;
+									font-weight: $middle;
+								}
+
+								@include big-monitor {
+									font-size: 22px;
+
+									&:hover {
+										font-size: 24px;
+										font-weight: $middle;
+									}
+								}
+
+								@include monitor {
+									font-size: 20px;
+
+									&:hover {
+										font-size: 22px;
+										font-weight: $middle;
+									}
+								}
+							}
+						}
+					}
+
+					&:hover {
+						.list-item-dropdown {
+							visibility: visible;
+							opacity: 1;
+							transform: translate(0px, -10px);
+						}
+					}
+				}
+			}
+		}
+
+		.search-icon-container {
+			@include flex (row, 0px, flex-end, center);
+			width: 5%;
+			cursor: pointer;
+			margin-bottom: 5px;
+		}
+	}
+
+	.mobile-header-container {
+		position: fixed;
+		top: 0px;
+		right: 0%;
+		height: var(--doc-height);
+		width: 50%;
+		background-color: rgba(0, 0, 0, 0.92);
+		padding: 25px;
+		z-index: 2;
+		transition: all 0.3s ease-out;
+		display: none;
+
+		@include big-mobile {
+			width: 100%;
+		}
+
+
+		&.show {
+			display: block;
+		}
+
+		.mobile-header {
+			width: 100%;
+			margin: 0 auto;
+			@include flex (column, 50px, flex-start, flex-start);
+			height: 100%;
+
+			.mobile-menu-close-icon {
+				display: block;
+				align-self: end;
+				color: #fff;
+
+				.fa-xmark {
+					margin-bottom: 5px;
+					font-size: 20px;
+
+					@include big-monitor {
+						font-size: 28px;
+					}
+
+					@include monitor {
+						font-size: 24px;
+					}
+				}
+			}
+
+			.mobile-search {
+				@include flex (row, 15px, center, center);
+				cursor: pointer;
+				border-bottom: 1px solid #fff;
+				padding: 5px;
+
+				@include mobile {
+					width: 100%;
+				}
+
+				.mobile-search-input {
+					border: none;
+					outline: none;
+					background-color: transparent;
+					color: #fff;
+					width: 90%;
+
+				}
+
+				.fa-magnifying-glass {
+					color: #fff;
+				}
+
+				&:hover {
+					.fa-magnifying-glass {
+						font-size: 20px;
+
+						@include big-monitor {
+							font-size: 28px;
+						}
+
+						@include monitor {
+							font-size: 24px;
+						}
+					}
+				}
+			}
+
+			.mobile-header-navigation {
+				@include flex (column, 0px, flex-start, center);
+				width: 100%;
+
+				.mobile-navigation-list {
+					width: 100%;
+					@include flex (column, 30px, space-between, center);
+
+					.mobile-navigation-list-item {
+						@include flex (column, 0px, flex-start, center);
+						position: relative;
+						width: 100%;
+						color: $alternative-text;
+
+						.mobile-navigation-item-link {
+							font-size: 20px;
+							padding: 5px;
+							cursor: pointer;
+							width: 100%;
+							text-align: start;
+							outline: none;
+
+							&:hover {
+								font-weight: $semi-bold;
+							}
+						}
+
+						.mobile-dropdown-item-link { 
+							@include flex (row, 4px, center, center);
+							transition: .3s;
+							width: 100%;
+
+							.fa-angle-down {
+								font-size: 11px;
+
+								@include big-monitor {
+									font-size: 18px;
+								}
+
+								@include monitor {
+									font-size: 16px;
+								}
+							}
+						}
+
+						.mobile-list-item-dropdown {
+							transition: all 0.3s ease-out;
+							max-height: 0px;
+							overflow: hidden;
+							width: 100%;
+
+							&.open {
+								padding: 10px;
+							}
+
+							.mobile-dropdown-list {
+								@include flex (column, 0px, center, center);
+
+								.mobile-dropdown-list-item {
+									cursor: pointer;
+									width: 100%;
+									padding: 20px 15px;
+									text-align: start;
+									font-size: 18px;
+
+									&:hover {
+											.mobile-dropdown-list-link {
+												font-weight: $semi-bold;
+												border-left: 3px solid #f6f4f0;
+												padding-left: 15px;
+											}
+									}
+											
+									@include big-monitor {
+										font-size: 24px;
+									}
+
+									@include monitor {
+										font-size: 22px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

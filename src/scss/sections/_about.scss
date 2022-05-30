@@ -1,0 +1,223 @@
+@use "../partials/_main-styles" as *;
+
+.about-section {
+	width: 100%;
+
+
+	.about-container {
+		max-width: $max-width;
+		width: 75%;
+		margin: 0 auto;
+		@include flex (column, 60px, flex-start, center);
+		padding: 80px 0px;
+		font-family: $lora;
+
+		@media only screen and (max-width: 1300px) {
+			width: 80%;
+		}
+
+		@include tablet {
+			width: 90%;
+		}
+
+		@include big-mobile {
+			width: 95%;
+		}
+
+		&.active {
+			.about-container-title  {
+				opacity: 1;
+			}
+
+			.about-content {
+				.about-image-container {
+					opacity: 1;
+				}
+
+				.about-content-info {
+					opacity: 1;
+					transform: translateY(0px);
+				}
+			}
+		}
+
+		.about-container-title {
+			font-size: 35px;
+			width: 70%;
+			font-weight: $middle;
+			text-align: center;
+
+			@include scrolling-animation {
+				opacity: 0;
+				transition: all 2s ease-out;
+			}
+
+			@include big-monitor {
+				font-size: 45px;
+			}
+
+			@include monitor {
+				font-size: 40px;
+			}
+
+			@media only screen and (max-width: 1300px) {
+				font-size: 30px;
+			}
+
+			@include tablet {
+				font-size: 25px;
+			}
+
+			@include small-tablet {
+				width: 100%;
+				text-align: start;
+				font-size: 30px;
+			}
+
+			@include big-mobile {
+				font-size: 25px;
+			}
+		}
+
+		.about-content {
+			@include flex (row, 40px, flex-start, center);
+			font-family: omega;
+
+			@include small-tablet {
+				flex-direction: column;
+			}
+
+			.about-image-container {
+				flex-basis: 45%;
+				width: 100%;
+
+				@include scrolling-animation {
+					opacity: 0;
+					transition: all 2s ease-out;
+				}
+
+				.about-image {
+					width: 100%;
+				}
+			}
+
+			.about-content-info {
+				@include flex (column, 20px, flex-start, flex-start);
+				flex-basis: 55%;
+
+				@include scrolling-animation {
+					opacity: 0;
+					transform: translateY(150px);
+					transition: all 1s ease-out;
+				}
+
+				&:after {
+					font-size: 14px;
+				}
+
+				.about-subtitle {
+					text-transform: uppercase;
+					font-size: 10px;
+					color: $about-subtitle;
+					font-weight: $small;
+
+					@include small-tablet {
+						margin-bottom: 10px;
+					}
+				}
+
+				.about-content-paragraph {
+					font-size: 18px;
+					font-weight: $middle;
+					text-align: start;
+
+					@include big-monitor {
+						font-size: 22px;
+					}
+
+					@include monitor {
+						font-size: 20px;
+					}
+
+					@include tablet {
+						font-size: 16px;
+					}
+
+					@include small-tablet {
+						font-size: 18px;
+					}
+				}
+
+				.about-join-link {
+					border-bottom: 2px solid $about-link;
+					margin-top: 10px;
+
+					span {
+						display: inline-block;
+						position: relative;
+						padding-bottom: 3px;
+						font-size: 18px;
+						font-weight: $semi-bold;
+						cursor: pointer;
+						transition: 0.4s;
+						letter-spacing: 1px;
+
+						&:after {
+							content: '\00bb';
+							position: absolute;
+							opacity: 0;
+							top: 2px;
+							right: -20px;
+							transition: 0.4s;
+							font-size: 16px;
+						}
+
+
+						@include big-monitor {
+							font-size: 20px;
+
+							&:after {
+								font-size: 18px;
+							}
+						}
+
+						@include monitor {
+							font-size: 18px;
+
+							&:after {
+								font-size: 16px;
+							}
+						}
+
+						@include tablet {
+							font-size: 16px;
+
+							&:after {
+								font-size: 14px;
+							}
+						}
+
+						@include small-tablet {
+							font-size: 18px;
+
+							&:after {
+								font-size: 16px;
+							}
+						}
+					}
+
+					&:hover {
+						span {
+							padding-right: 20px;
+
+							&:after {
+								opacity: 1;
+								right: 0px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

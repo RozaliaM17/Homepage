@@ -1,0 +1,277 @@
+@use "../partials/_main-styles" as *;
+
+.representation-section {
+	width: 100%;
+	margin: 0 auto;
+
+
+	.representation-container {
+		max-width: $max-width;
+		width: 75%;
+		margin: 0 auto;
+		@include flex (column, 20px, center, center);
+		font-family: $lora;
+		padding: 150px 0px 80px 0px;
+
+		@media only screen and (max-width: 1300px) {
+			width: 80%;
+		}
+
+		@include tablet {
+			width: 90%;
+		}
+
+		@include small-tablet {
+			padding: 50px 0px;
+			align-items: flex-start;
+		}
+
+		@include big-mobile {
+			width: 95%;
+		}
+
+		&.active {
+			.representation-section-title {
+				opacity: 1;
+				transform: translateY(0px);
+			}
+
+			.representation-section-subtitle {
+				opacity: 1;
+				transform: translateY(0px);
+			}
+
+			.representatives-grid {
+				opacity: 1;
+				transform: translateY(0px);
+			}
+		}
+
+		.representation-section-title {
+			font-size: 45px;
+			font-weight: $small;
+
+			@include scrolling-animation {
+				transform: translateY(50px);
+				opacity: 0;
+				transition: all 1s;
+			}
+
+			@include big-monitor {
+				font-size: 49px;
+			}
+
+			@include monitor {
+				font-size: 47px;
+			}
+
+			@include tablet {
+				font-size: 40px;
+			}
+
+			@include big-mobile {
+				font-size: 35px;
+			}
+		}
+
+		.representation-section-subtitle {
+			width: 50%;
+			margin: 0 auto;
+			font-weight: $semi-bold;
+			font-size: 14px;
+			color: $sub-title;
+			line-height: 1.5;
+			text-align: center;
+			margin-bottom: 40px;
+
+			@media only screen and (max-width: 1300px) {
+				width: 60%;
+			}
+
+			@media only screen and (max-width: 1200px) {
+				width: 70%;
+			}
+
+			@include scrolling-animation {
+				opacity: 0;
+				transition: all 1s ease-out;
+				transform: translateY(50px);
+			}
+
+			@include small-tablet {
+				width: 90%;
+				margin: unset;
+				text-align: start;
+			}
+
+		}
+
+		.representatives-grid {
+			@include grid (repeat(auto-fit, minmax(220px, 1fr)), unset, 30px, center, flex-start);
+			width: 100%;
+
+			@media only screen and (max-width: 1200px) {
+				gap: 40px;
+			}
+
+			@include scrolling-animation {
+				transform: translateY(300px);
+				opacity: 0;
+				transition: all 2s ease-out;
+			}
+
+			@include monitor {
+				transition: all 1s ease-out;
+			}
+
+			.representative-card {
+				@include flex (column, 20px, flex-start, center);
+
+				.representative-image-container {
+					position: relative;
+					width: 100%;
+
+					.representative-image {
+						max-width: 100%;
+						width: 100%;
+						min-height: 340px;
+					}
+
+					.representative-image-label {
+						position: absolute;
+						bottom: -1px;
+						left: 0px;
+						padding: 12px;
+						background-color: $alternative-color;
+						@include flex (row, 10px, center, flex-start);
+
+						.representative-logo {
+							width: 20px;
+							height: 20px;
+						}
+
+						span {
+							font-style: italic;
+							font-weight: $small;
+							font-size: 16px;
+
+							@include big-monitor {
+								font-size: 20px;
+							}
+
+							@include monitor {
+								font-size: 16px;
+							}
+						}
+					}
+				}
+
+				.representative-information {
+					@include flex (column, 10px, flex-start, flex-start);
+
+					.representative-name {
+						letter-spacing: 1px;
+						font-size: 20px;	
+
+						@include big-monitor {
+							font-size: 24px;
+						}
+
+						@include monitor {
+							font-size: 22px;
+						}				
+					}
+
+					.representative-position {
+						font-weight: $small;
+						font-size: 12px;
+						margin-bottom: 10px;
+
+						@include big-monitor {
+							font-size: 16px;
+						}
+
+						@include monitor {
+							font-size: 14px;
+						}
+					}
+
+					.representative-bio {
+						width: 90%;
+						color: $bio;
+						font-weight: $middle;
+						font-size: 14px;
+						margin-bottom: 10px;
+
+						@include big-monitor {
+							font-size: 20px;
+						}
+
+						@include monitor {
+							font-size: 18px;
+						}
+
+					}
+
+					.read-feature-link {
+						border-bottom: 1px solid $read-link;
+						transition: all 0.2s ease-out;
+
+						span {
+							display: inline-block;
+							position: relative;
+							color: $read-link;
+							font-size: 12px;
+							font-weight: $middle;
+							text-transform: uppercase;
+							letter-spacing: 1px;
+							cursor: pointer;
+							transition: 0.4s;
+
+							&:after {
+								content: '\00bb';
+								position: absolute;
+								opacity: 0;
+								top: -3px;
+								right: -20px;
+								transition: 0.4s;
+								color: #000;
+								font-size: 14px;
+							}
+						}
+
+						@include big-monitor {
+							font-size: 16px;
+						}
+
+						@include monitor {
+							font-size: 14px;
+						}
+
+						&:hover {
+							span {
+								padding-right: 20px;
+								font-weight: $middle;
+
+								&:after {
+									opacity: 1;
+									right: 0px;
+								}
+
+								@include big-monitor {
+									font-size: 24px;
+								}
+
+								@include monitor {
+									font-size: 22px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+}

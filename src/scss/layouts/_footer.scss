@@ -1,0 +1,168 @@
+@use "../partials/_main-styles" as *;
+
+.page-footer {
+	width: 100%;
+
+
+	.footer-container {
+		width: 75%;
+		margin: 0 auto;
+		@include flex (column, 40px, flex-start, center);
+		padding: 80px 0px;
+		font-family: $lexend;
+
+		@media only screen and (max-width: 1300px) {
+			width: 80%;
+		}
+
+		@include tablet {
+			width: 90%;
+		}
+
+		@include big-mobile {
+			width: 95%;
+		}
+
+		.main-footer-container {
+			width: 100%;
+			@include flex (row, 0px, space-between, flex-end);
+
+			@include big-mobile {
+				flex-wrap: wrap;
+				gap: 30px;
+				justify-content: space-evenly;
+			}
+
+			.contact-container {
+				@include flex (column, 5px, flex-start, flex-start);
+
+				.contact-title {
+					font-size: 14px;
+					font-weight: $semi-bold;
+
+					@include big-monitor {
+						font-size: 18px;
+					}
+
+					@include monitor {
+						font-size: 16px;
+					}
+				}
+
+				.contact-info {
+					font-size: 14px;
+					font-weight: $middle;
+					color: $footer-text;
+				}
+			}
+
+			.footer-logo {
+				@include flex (column, 15px, flex-start, center);
+
+				.footer-logo-image {
+					width: 30px;
+					height: 30px;
+				}
+
+				.footer-logo-text {
+					font-size: 18px;
+					font-weight: $bold;
+
+					@include big-monitor {
+						font-size: 22px;
+					}
+
+					@include monitor {
+						font-size: 20px;
+					}
+				}
+			}
+
+			.social-media-container {
+				@include flex (column, 10px, flex-start, center);
+
+				.social-media-title {
+					font-size: 14px;
+					font-weight: $semi-bold;
+
+					@include big-monitor {
+						font-size: 18px;
+					}
+
+					@include monitor {
+						font-size: 16px;
+					}
+				}
+
+				.social-media-icons {
+					width: 100%;
+					@include flex (row, 10px, center, center);
+
+					.social-media-icon-container {
+						border-radius: 50%;
+						padding: 4px 7px;
+						background-color: $social-bg;
+
+						&:nth-child(1) {
+							padding: 4px 10px;
+						}
+
+						i {
+							color: $social-icon;
+							font-size: 14px;
+
+							@include big-monitor {
+								font-size: 18px;
+							}
+
+							@include monitor {
+								font-size: 16px;
+							}
+						}
+
+						&:hover {
+							padding: 6px 9px;
+
+							&:nth-child(1) {
+								padding: 6px 12px;
+							}
+
+							i {
+								font-size: 16px;
+								font-weight: $bold;
+
+								@include big-monitor {
+									font-size: 20px;
+								}
+
+								@include monitor {
+									font-size: 18px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.copyright-container {
+			width: 80%;
+			text-align: center;
+
+			.copyright {
+				color: $footer-text;
+				font-size: 10px;
+				text-transform: uppercase;
+				font-weight: $middle;
+
+				@include big-monitor {
+					font-size: 14px;
+				}
+
+				@include monitor {
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}
