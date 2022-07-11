@@ -1,9 +1,8 @@
 .section {
-	background-color: #fff;
-	color: #000;
+	background-color: var(--primary-bg);
+	color: var(--primary);
 
-	&:nth-child(3),
-	&:nth-child(7) {
-		background-color: #f6f4f0;
+	&__dark{
+		background-color: var(--secondary-bg);
 	}
 }

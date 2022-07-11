@@ -4,14 +4,6 @@
 
 @font-face {
   font-family: "omega";
-  src: url("../../src/fonts/Omega/BROmega-Medium.ttf") format("trueType"),
+  src: url("../../src/fonts/Omega/BROmega-Medium.ttf") format("trueType");
+  font-display: swap;
 }
-// Font-weight
-$small: 400;
-$middle: 500;
-$semi-bold: 600;
-$bold: 700;
-
-// Font-family
-$lexend: 'Lexend', sans-serif;
-$lora: 'Lora', serif;

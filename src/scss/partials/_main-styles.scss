@@ -1,4 +1,6 @@
-@forward "base/_fonts";
-@forward "abstracts/_variables";
-@forward "abstracts/_mixins" ;
-@forward "layouts/_page-layout";
+@import "base/_fonts";
+@import "base/_general";
+@import "base/_settings" ;
+@import "base/_mixins" ;
+
+@import "layouts/_page-layout";

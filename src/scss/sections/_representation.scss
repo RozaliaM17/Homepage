@@ -1,16 +1,14 @@
-@use "../partials/_main-styles" as *;
-
 .representation-section {
 	width: 100%;
 	margin: 0 auto;
 
 
 	.representation-container {
-		max-width: $max-width;
+		max-width: var(--max-width);
 		width: 75%;
 		margin: 0 auto;
 		@include flex (column, 20px, center, center);
-		font-family: $lora;
+		font-family: var(--lora);
 		padding: 150px 0px 80px 0px;
 
 		@media only screen and (max-width: 1300px) {
@@ -48,38 +46,21 @@
 		}
 
 		.representation-section-title {
-			font-size: 45px;
-			font-weight: $small;
+			font-weight: var(--small);
 
 			@include scrolling-animation {
 				transform: translateY(50px);
 				opacity: 0;
 				transition: all 1s;
 			}
-
-			@include big-monitor {
-				font-size: 49px;
-			}
-
-			@include monitor {
-				font-size: 47px;
-			}
-
-			@include tablet {
-				font-size: 40px;
-			}
-
-			@include big-mobile {
-				font-size: 35px;
-			}
 		}
 
 		.representation-section-subtitle {
 			width: 50%;
 			margin: 0 auto;
-			font-weight: $semi-bold;
-			font-size: 14px;
-			color: $sub-title;
+			font-weight: var(--semi-bold);
+			font-size: 0.9em;
+			color: var(--sub-title);
 			line-height: 1.5;
 			text-align: center;
 			margin-bottom: 40px;
@@ -141,8 +122,8 @@
 						position: absolute;
 						bottom: -1px;
 						left: 0px;
-						padding: 12px;
-						background-color: $alternative-color;
+						padding: 12px 12px 7px 12px;
+						background-color: var(--secondary);
 						@include flex (row, 10px, center, flex-start);
 
 						.representative-logo {
@@ -152,16 +133,8 @@
 
 						span {
 							font-style: italic;
-							font-weight: $small;
-							font-size: 16px;
-
-							@include big-monitor {
-								font-size: 20px;
-							}
-
-							@include monitor {
-								font-size: 16px;
-							}
+							font-weight: var(--small);
+							font-size: 0.85em;
 						}
 					}
 				}
@@ -171,101 +144,37 @@
 
 					.representative-name {
 						letter-spacing: 1px;
-						font-size: 20px;	
-
-						@include big-monitor {
-							font-size: 24px;
-						}
-
-						@include monitor {
-							font-size: 22px;
-						}				
+						font-size: 1.1em;				
 					}
 
 					.representative-position {
-						font-weight: $small;
-						font-size: 12px;
+						font-weight: var(--small);
+						font-size: 0.8em;
 						margin-bottom: 10px;
-
-						@include big-monitor {
-							font-size: 16px;
-						}
-
-						@include monitor {
-							font-size: 14px;
-						}
 					}
 
 					.representative-bio {
 						width: 90%;
-						color: $bio;
-						font-weight: $middle;
-						font-size: 14px;
+						color: var(--bio);
+						font-weight: var(--middle);
+						font-size: 0.85em;
 						margin-bottom: 10px;
-
-						@include big-monitor {
-							font-size: 20px;
-						}
-
-						@include monitor {
-							font-size: 18px;
-						}
 
 					}
 
 					.read-feature-link {
-						border-bottom: 1px solid $read-link;
+						border-bottom: 1px solid var(--read-link);
 						transition: all 0.2s ease-out;
 
 						span {
 							display: inline-block;
 							position: relative;
-							color: $read-link;
-							font-size: 12px;
-							font-weight: $middle;
+							color: var(--read-link);
+							font-size: 0.6em;
+							font-weight: var(--middle);
 							text-transform: uppercase;
 							letter-spacing: 1px;
 							cursor: pointer;
-							transition: 0.4s;
-
-							&:after {
-								content: '\00bb';
-								position: absolute;
-								opacity: 0;
-								top: -3px;
-								right: -20px;
-								transition: 0.4s;
-								color: #000;
-								font-size: 14px;
-							}
-						}
-
-						@include big-monitor {
-							font-size: 16px;
-						}
-
-						@include monitor {
-							font-size: 14px;
-						}
-
-						&:hover {
-							span {
-								padding-right: 20px;
-								font-weight: $middle;
-
-								&:after {
-									opacity: 1;
-									right: 0px;
-								}
-
-								@include big-monitor {
-									font-size: 24px;
-								}
-
-								@include monitor {
-									font-size: 22px;
-								}
-							}
 						}
 					}
 				}

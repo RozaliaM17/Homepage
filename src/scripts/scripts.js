@@ -1,5 +1,5 @@
 window.addEventListener("scroll", reveal);
-window.addEventListener("load", scrollAnimation);
+document.addEventListener("DOMContentLoaded", scrollAnimation);
 
 const myWidth = window.innerWidth;
 const reveals = document.querySelectorAll(".reveal");
@@ -29,14 +29,14 @@ function changeHeader() {
 // Open mobile menu
 function openMobileMenu() {
   mobileHeaderContainer.classList.add("show");
-  mobileMenuOpenIcon.style.display = "none";
+  mobileMenuOpenIcon.classList.add("hide");
 }
 
 
 // Close mobile menu
 function closeMobileMenu() {
   mobileHeaderContainer.classList.remove("show");
-  mobileMenuOpenIcon.style.display = "block";
+  mobileMenuOpenIcon.classList.remove("hide");
 }
 
 // Close the mobile menu, when click outside the box
@@ -72,26 +72,6 @@ for (var i = 0; i < mobileDropdownContainer.length; i++) {
 }
 
 
-// Change from decktop header to mobile header
-function pageWidth() {
-  window.onresize = displayWindowSize;
-  window.onload = displayWindowSize;
-
-  function displayWindowSize() {
-    let myWidth = window.innerWidth;
-    if (myWidth < 990) {
-      headerNav.style.display = "none";
-      searchContainer.style.display = "none";
-      mobileMenuOpenIcon.style.display = "block";
-
-    } else if (myWidth > 990) {
-      headerNav.style.display = "flex";
-      searchContainer.style.display = "block";
-      mobileMenuOpenIcon.style.display = "none";
-    } 
-  };
-};
-
 //  Scroll animations for introduction section
 function scrollAnimation() {
   let introductionSection = document.querySelector(".introduction-container");
@@ -112,8 +92,6 @@ function reveal() {
     var elementVisible = 200;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add("active");
-    } else {
-      reveals[i].classList.remove("active");
     }
   }
 }
@@ -125,7 +103,6 @@ const documentHeight = () => {
  doc.style.setProperty('--doc-height', `${window.innerHeight}px`);
 }
 
-pageWidth();
 documentHeight();
 
 

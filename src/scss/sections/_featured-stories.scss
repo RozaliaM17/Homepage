@@ -1,17 +1,15 @@
-@use "../partials/_main-styles" as *;
-
 .featured-section {
 	width: 100%;
 
 
 	.featured-container {
-		max-width: $max-width;
+		max-width: var(--max-width);
 		width: 75%;
 		margin: 0 auto;
 		@include flex (row, 100px, center, flex-start);
-		font-family: $lora;
+		font-family: var(--lora);
 		padding: 50px 0px;
-		border-bottom: 2px solid $section-border;
+		border-bottom: 2px solid var(--section-border);
 
 		@media only screen and (max-width: 1300px) {
 			width: 80%;
@@ -69,58 +67,25 @@
 					}
 					.category {
 						font-style: italic;
-						font-size: 20px;
-
-						@include big-monitor {
-							font-size: 24px;
-						}
-
-						@include monitor {
-							font-size: 22px;
-						}
+						font-size: 1.2em;
 					}
 				}
 				.featured-title {
-					font-weight: $middle;
-					font-size: 30px;
-
-					@include big-monitor {
-						font-size: 34px;
-					}
-
-					@include monitor {
-						font-size: 32px;
-					}
+					font-weight: var(--middle);
 				}
 
 				.subtitle {
 					text-transform: uppercase;
-					font-size: 10px;
-					font-weight: $bold;
+					font-size: 0.6em;
+					font-weight: var(--bold);
 					letter-spacing: 1px;
-
-					@include big-monitor {
-						font-size: 14px;
-					}
-
-					@include monitor {
-						font-size: 12px;
-					}
 				}
 
 				.featured-paragraph {
-					font-size: 14px;
-					color: $featured-paragraph;
-					font-weight: $semi-bold;
-					width: 80%;
-
-					@include big-monitor {
-						font-size: 20px;
-					}
-
-					@include monitor {
-						font-size: 18px;
-					}
+					font-size: 1em;
+					color: var(--featured-paragraph);
+					font-weight: var(--semi-bold);
+					width: 90%;
 				}
 			}
 		}
@@ -129,7 +94,7 @@
 			flex-basis: 50%;
 			@include flex (column, 30px, flex-start, flex-start);
 			padding-top: 20px;
-			font-family: $lexend;
+			font-family: var(--lexend);
 
 			@include scrolling-animation {
 				opacity: 0;
@@ -138,18 +103,8 @@
 			}
 
 			.other-story-title {
-				font-size: 35px;
-				font-weight: $bold;
+				font-weight: var(--bold);
 				text-transform: capitalize;
-
-				@include big-monitor {
-					font-size: 39px;
-				}
-
-				@include monitor {
-					font-size: 37px;
-				}
-
 			}
 
 			.stories-container {
@@ -168,51 +123,23 @@
 					@include flex (row, 30px, flex-start, center);
 					width: 100%;
 
-					// @include tablet {
-					// 	width: 70%;
-					// }
-
 					.story-number {
-						font-size: 50px;
-						font-weight: $small;
-
-						@include big-monitor {
-							font-size: 54px;
-						}
-
-						@include monitor {
-							font-size: 52px;
-						}
+						font-size: 3em;
+						font-weight: var(--small);
 					}
 
 					.story-info {
 						@include flex (column, 7px, flex-start, flex-start);
 
 						.story-title {
-							font-weight: $semi-bold;
-							font-size: 16px;
-
-							@include big-monitor {
-								font-size: 22px;
-							}
-
-							@include monitor {
-								font-size: 20px;
-							}
+							font-weight: var(--semi-bold);
+							font-size: 1em;
 						}
 
 						.story-bio {
-							font-size: 12px;
-							font-weight: $middle;
-							color: $other-stories-bio;
-
-							@include big-monitor {
-								font-size: 18px;
-							}
-
-							@include monitor {
-								font-size: 16px;
-							}
+							font-size: 0.8em;
+							font-weight: var(--middle);
+							color: var(--other-stories-bio);
 						}
 					}
 				}
