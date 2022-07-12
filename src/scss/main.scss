@@ -1,12 +1,14 @@
 @import "base/_reset";
 
-@import "layouts/_header";
 @import  "sections/_introduction";
 @import  "sections/_representation";
 @import  "sections/_featured-stories";
 @import  "sections/_the-latest";
 @import  "sections/_business-resources";
 @import  "sections/_about";
+
 @import  "layouts/_footer";
+@import "layouts/_header";
+
 
 @import "partials/_main-styles";

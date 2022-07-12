@@ -18,13 +18,12 @@ const scrollHeader = document.addEventListener("scroll", changeHeader);
 
 
 function changeHeader() {
-  if (window.scrollY >= 100) {
+  if (window.scrollY >= 50) {
     desktopHeader.classList.add("scroll");
-  } else if (window.scrollY < 100) {
+  } else if (window.scrollY < 50) {
     desktopHeader.classList.remove("scroll");
   }
 }
-
 
 // Open mobile menu
 function openMobileMenu() {

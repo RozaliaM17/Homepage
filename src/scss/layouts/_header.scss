@@ -1,17 +1,16 @@
 @import "../partials/_main-styles";
 
 .page-header {
-	max-width: 1900px;
 	margin: 0 auto;
-	@include flex (column, 0px, center, flex-start);
+	@include flex (column, 0rem, center, flex-start);
 	position: fixed;
-	top: 0px;
-	left: 0px;
-	right: 0px;
+	top: 0;
+	left: 0;
+	right: 0;
 	z-index: 2;
 	font-family: var(--lexend);
 	background-color: var(--primary-bg);
-	transition: background-color 0.3s ease-out, color 0.3s ease-out;
+	transition: background-color 0.1s ease-out, color 0.1s ease-out;
 	color: var(--primary);
 	border-bottom: 1px solid var(--header-border);
 
@@ -21,37 +20,21 @@
 		border-bottom: none;
 
 		.desktop-header {
-			padding: 20px 0px 30px 0px;
+			padding: 1.25rem 0rem 1.875rem 0rem;
 		}
 	}
 
 	.desktop-header {
-		@include flex (row, 10px, unset, flex-end);
-		width: 95%;
+		width: 100%;
+		@include flex (row, 0.625rem, space-between, flex-end);
 		margin: 0 auto;
-		max-height: 15%;
-		padding: 30px 0px 40px 0px;
-
-		@include tablet {
-			padding: 20px 0px;
-			justify-content: space-between;
-			width: 90%;
-		}
-
-		@include big-mobile {
-			width: 95%;
-		}
+		padding: 1.875rem 0rem;
 
 		.page-logo {
 			@include flex (row, 2px, flex-start, flex-end);
-			width: 25%;
-
-			@include tablet {
-				width: unset;
-			}
 
 			.page-logo-text {
-				font-size: 1.8em;
+				font-size: 1.75em;
 				font-weight: var(--bold);
 			}
 		}
@@ -69,90 +52,67 @@
 
 			.fa-bars {
 				margin-bottom: 5px;
-				font-size: 1.8em;
+				font-size: 1.5em;
 			}
 		}
 
 		.header-navigation {
-			@include flex (row, 0px, flex-start, center);
-			width: 70%;
-
-			@media only screen and (max-width: 1120px) {
-				justify-content: center;
-			}
+			@include flex (row, 0rem, center, center);
 
 			@include tablet {
 				display: none;
 			}
 
 			.navigation-list {
-				width: 70%;
-				@include flex (row, 0px, space-between, center);
-
-				@media only screen and (max-width: 1300px) {
-					width: 90%;
-					justify-content: space-around;
-				}
+				@include flex (row, 1.5rem, space-between, center);
 
 				.navigation-list-item {
 					@include flex (column, 4px, flex-start, center);
 					position: relative;
 
 					.navigation-item-link {
-						font-size: 1.1em;
+						font-size: 0.8125em;
 						padding: 5px;
 						cursor: pointer;
-
-
-						@media only screen and (max-width: 1120px) {
-							font-size: 14px;
-						}
 					}
 
 					.dropdown-item-link { 
 						@include flex (row, 4px, center, center);
 
 						.fa-angle-down {
-							font-size: 0.6em;
+							font-size: 0.75em;
 						}
 					}
 
 					.list-item-dropdown {
 						position: absolute;
-						top: 35px;
-						left: 0px;
+						top: 2.1875rem;
+						left: 0rem;
 						visibility: hidden;
 						opacity: 0;
-						padding: 10px;
-						width: 240px;
-						transition: width 0.3s ease-out;
+						padding: 0.625rem;
+						width: 11.875rem;
 						z-index: 1;
-
-						@media only screen and (max-width: 1120px) {
-							width: 190px;
-						}
-
-						@include big-monitor {
-							width: 280px;
-						}
 
 						.dropdown-list {
 							@include flex (column, 0px, center, center);
 							background-color: var(--secondary);
-							box-shadow: 0px 0px 30px rgb(127 137 161 / 25%);
+							box-shadow: 0px 0px 1.875rem rgb(127 137 161 / 25%);
 							border-radius: 5px;
 							list-style: none;
 
 							.dropdown-list-item {
 								width: 100%;
-								padding: 20px 15px;
-								text-align: flex-start;
+								padding: 0.9375rem;
+								text-align: start;
 
 								.dropdown-list-link {
 									width: 100%;
 									cursor: pointer;
 									opacity: 0.6;
+									color: var(--primary);
 									font-weight: var(--middle);
+									font-size: 0.75em;
 
 									&:hover {
 										opacity: 1;
@@ -166,7 +126,7 @@
 						.list-item-dropdown {
 							visibility: visible;
 							opacity: 1;
-							transform: translate(0px, -10px);
+							transform: translate(0rem, -0.625rem);
 						}
 					}
 				}
@@ -192,12 +152,12 @@
 		height: var(--doc-height);
 		width: 50%;
 		background-color: rgba(0, 0, 0, 0.92);
-		padding: 25px;
+		padding: 1.5625rem;
 		z-index: 2;
 		transition: width 0.3s ease-out;
 		display: none;
 
-		@include big-mobile {
+		@include mobile {
 			width: 100%;
 		}
 
@@ -209,7 +169,7 @@
 		.mobile-header {
 			flex-basis: 100%;
 			margin: 0 auto;
-			@include flex (column, 50px, flex-start, flex-start);
+			@include flex (column, 3.125rem, flex-start, flex-start);
 			height: 100%;
 
 			.mobile-menu-close-icon {
@@ -224,21 +184,16 @@
 			}
 
 			.mobile-search {
-				@include flex (row, 15px, center, center);
+				@include flex (row, 0.9375rem, center, center);
 				cursor: pointer;
 				border-bottom: 1px solid var(--secondary);
-				padding: 10px;
-
-				@include mobile {
-					width: 100%;
-				}
+				padding: 0.625rem;
 
 				.mobile-search-input {
 					border: none;
 					outline: none;
 					background-color: var(--primary-bg);
 					color: var(--secondary);
-					width: 90%;
 				}
 
 				.fa-magnifying-glass {
@@ -253,15 +208,15 @@
 			}
 
 			.mobile-header-navigation {
-				@include flex (column, 0px, flex-start, center);
+				@include flex (column, 0rem, flex-start, center);
 				width: 100%;
 
 				.mobile-navigation-list {
 					width: 100%;
-					@include flex (column, 30px, space-between, center);
+					@include flex (column, 1.875rem, space-between, center);
 
 					.mobile-navigation-list-item {
-						@include flex (column, 0px, flex-start, center);
+						@include flex (column, 0rem, flex-start, center);
 						position: relative;
 						width: 100%;
 						color: var(--secondary);
@@ -284,7 +239,7 @@
 							width: 100%;
 
 							.fa-angle-down {
-								font-size: 0.8em;
+								font-size: 0.875em;
 							}
 						}
 
@@ -295,7 +250,7 @@
 							width: 100%;
 
 							&.open {
-								padding: 10px;
+								padding: 0.625rem;
 							}
 
 							.mobile-dropdown-list {
@@ -303,11 +258,11 @@
 
 								.mobile-dropdown-list-item {
 									width: 100%;
-									padding: 20px 15px;
+									padding: 1.25rem 0.9375rem;
 
 									.mobile-dropdown-list-link {
 										text-align: start;
-										font-size: 1.1em;
+										font-size: 0.875em;
 										font-weight: var(--semi-bold);
 										opacity: 0.6;
 										cursor: pointer;

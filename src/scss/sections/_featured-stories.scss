@@ -3,25 +3,15 @@
 
 
 	.featured-container {
-		max-width: var(--max-width);
-		width: 75%;
 		margin: 0 auto;
-		@include flex (row, 100px, center, flex-start);
+		@include flex (row, 3.75rem, center, flex-start);
 		font-family: var(--lora);
-		padding: 50px 0px;
+		padding: 3.125em 0rem;
 		border-bottom: 2px solid var(--section-border);
 
-		@media only screen and (max-width: 1300px) {
-			width: 80%;
-		}
-
-		@include tablet {
-			width: 90%;		
-		}
-
-		@media only screen and (max-width: 900px) {
+		@include small {
 			flex-direction: column;
-			gap: 30px;
+			gap: 1.875rem;
 		}
 
 		&.active {
@@ -39,12 +29,12 @@
 
 		.featured-story {
 			flex-basis: 50%;
-			@include flex (column, 30px, flex-start, flex-start);
+			@include flex (column, 1.875rem, flex-start, flex-start);
 
 			@include scrolling-animation {
 				opacity: 0;
-				transform: translateX(-150px);
-				transition: all 2s ease-out;
+				transform: translateX(-9.375em);
+				transition: opacity 2s ease-out, transform 2s ease-out;
 			}
 
 			.featured-image-container {
@@ -56,18 +46,18 @@
 			}
 
 			.featured-content {
-				@include flex (column, 30px, flex-start, flex-start);
+				@include flex (column, 1.875rem, flex-start, flex-start);
 			
 				.featured-content-category {
-					@include flex (row, 10px, flex-start, center);
+					@include flex (row, 0.625rem, flex-start, center);
 
 					.featured-logo {
-						width: 25px;
-						height: 25px;
+						width: 1.5625rem;
+						height: 1.5625rem;
 					}
 					.category {
 						font-style: italic;
-						font-size: 1.2em;
+						font-size: 1.25em;
 					}
 				}
 				.featured-title {
@@ -76,7 +66,7 @@
 
 				.subtitle {
 					text-transform: uppercase;
-					font-size: 0.6em;
+					font-size: 0.75em;
 					font-weight: var(--bold);
 					letter-spacing: 1px;
 				}
@@ -85,21 +75,21 @@
 					font-size: 1em;
 					color: var(--featured-paragraph);
 					font-weight: var(--semi-bold);
-					width: 90%;
+					max-width: 90%;
 				}
 			}
 		}
 
 		.other-story-container {
 			flex-basis: 50%;
-			@include flex (column, 30px, flex-start, flex-start);
-			padding-top: 20px;
+			@include flex (column, 1.875rem, flex-start, flex-start);
+			padding-top: 1.25em;
 			font-family: var(--lexend);
 
 			@include scrolling-animation {
 				opacity: 0;
-				transform: translateY(150px);
-				transition: all 2s ease-out;
+				transform: translateY(9.375em);
+				transition: opacity 2s ease-out, transform 2s ease-out;
 			}
 
 			.other-story-title {
@@ -108,7 +98,7 @@
 			}
 
 			.stories-container {
-				@include grid (unset, unset, 30px, flex-start, flex-start);
+				@include grid (unset, unset, 1.875rem, flex-start, flex-start);
 
 				@include tablet {
 					grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -120,7 +110,7 @@
 				}
 
 				.story-content {
-					@include flex (row, 30px, flex-start, center);
+					@include flex (row, 1.875rem, flex-start, center);
 					width: 100%;
 
 					.story-number {
@@ -137,7 +127,7 @@
 						}
 
 						.story-bio {
-							font-size: 0.8em;
+							font-size: 0.875em;
 							font-weight: var(--middle);
 							color: var(--other-stories-bio);
 						}

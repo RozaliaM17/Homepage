@@ -3,25 +3,15 @@
 
 
 	.the-latest-container {
-		max-width: var(--max-width);
-		width: 75%;
-		padding: 80px 0px;
+		padding: 5rem 0rem;
 		margin: 0 auto;
-		@include flex (column, 40px, flex-start, flex-start);
+		@include flex (column, 2.5rem, flex-start, flex-start);
 		border-bottom: 2px solid var(--section-border);
-
-		@media only screen and (max-width: 1300px) {
-			width: 80%;
-		}
-
-		@include tablet {
-			width: 90%;		
-		}
 
 		&.active {
 			.the-latest-title {
 				opacity: 1;
-				transform: translateX(0px);
+				transform: translateX(0rem);
 			}
 
 			.the-latest-grid {
@@ -36,81 +26,66 @@
 
 			@include scrolling-animation {
 				opacity: 0;
-				transform: translateX(-150px);
-				transition: all 0.6s ease-out;
+				transform: translateX(-9.375rem);
+				transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 			}
 		}
 
 		.the-latest-grid {
-			width: 100%;
-			@include grid (1fr 1fr, unset, 80px, flex-start, center);
+			flex-basis: 100%;
+			@include grid (1fr 1fr, unset, 5rem, flex-start, center);
 
 			@include scrolling-animation {
 				opacity: 0;
 				transition: all 2.5s ease-out;
 			}
 
-			@include big-mobile {
+			@include mobile {
 				grid-template-columns: 1fr;
 			}
 
 			.the-latest-card {
-				@include flex (row, 20px, flex-start, center);
+				@include flex (row, 1.25rem, flex-start, center);
 
-				@media only screen and (max-width: 900px) {
+				@include tablet {
 					flex-direction: column;
-					align-items: flex-start;
 				}
 
-				@include big-mobile {
+				@include mobile {
 					flex-direction: row;
 					align-items: center;
 				}
 
-				@include mobile {
+				@media only screen and (max-width: 450px) {
 					flex-direction: column;
 				}
 
-
-
 				.the-latest-image {
-					width: 40%;
-
-					@media only screen and (max-width: 900px) {
-						width: 50%;
-					}
-
-					@include big-mobile {
-						width: 40%;
-					}
+					flex-basis: 40%;
 				}
 
 				.card-info {
-					@include flex (column, 15px, flex-start, flex-start);
+					@include flex (column,  0.9375rem, flex-start, flex-start);
 
 					.the-latest-category {
 						@include flex (row, 5px, flex-start, center);
 
 						.the-latest-logo {
-							width: 15px;
-							height: 15px;
+							width: 0.9375rem;
+							height: 0.9375rem;
 						}
 
 						.the-latest-category-name {
 							font-style: italic;
-							font-size: 0.9em;
+							font-size: 0.875em;
 							font-weight: var(--small);
 						}
 					}
 
 					.card-title {
-						width: 90%;
-						font-size: 1.1em;
+						flex-basis: 100%;
+						font-size: 1.125em;
 						font-weight: var(--semi-bold);
-
-						@include tablet {
-							width: 100%;		
-						}
 					}
 
 					.card-link {
@@ -119,7 +94,7 @@
 						span {
 							display: inline-block;
 							position: relative;
-							font-size: 0.65em;
+							font-size: 0.75em;
 							font-weight: var(--small);
 							text-transform: uppercase;
 							letter-spacing: 1px;
@@ -129,41 +104,5 @@
 				}
 			}
 		}
-
-		.read-more-btn {
-			width: 35%;
-			align-self: center;
-			padding: 15px 20px;
-			margin-top: 30px;
-			border: 1px solid #000;
-			color: #000;
-			background-color: transparent;
-			font-size: 1.2em;
-			font-weight: var(--semi-bold);
-			box-shadow: 0px 5px 10px #d3cab8;
-
-			@media only screen and (max-width: 900px) {
-				width: 50%;
-			}
-
-			@include big-mobile {
-				width: 70%;
-			}
-
-			span {
-				cursor: pointer;
-				display: inline-block;
-				position: relative;
-			}
-
-			&:hover {
-				box-shadow: 7px 7px 32px -3px #d3cab8;
-			}
-
-			&:active {
-				box-shadow: 0px 4px 8px #d3cab8;
-			}
-		}
 	}
-
 }

@@ -22,42 +22,54 @@ h6 {
 	font-size: var(--font-size-h6);
 }
 
-// $media-breakpoint-largest: 100rem;
-// $media-breakpoint-large: 81.25em;
-// $media-breakpoint-medium: 61.875em;
-// $media-breakpoint-mobile: 35em;
-// $breakpoint-mobile-navigation: 42em;
+$media-breakpoint-largest: 88rem;
+$media-breakpoint-large: 92rem;
+$media-breakpoint-medium: 75rem;
+$media-breakpoint-small: 60rem;
+$media-breakpoint-mobile: 52rem;
+$breakpoint-mobile-navigation: 42rem;
 
-// :root {
-// 	--site-width-largest: #{$media-breakpoint-largest} + 2em;
-// 	--site-width-large: #{$media-breakpoint-large} + 2em;
-// 	--site-width-medium: #{$media-breakpoint-medium} + 2em;
-// 	--site-width-mobile: #{$media-breakpoint-mobile} + 2em;
-// 	--row-max-width: var(--site-width-large);
+:root {
+	--site-width-large: #{$media-breakpoint-large - 8};
+	--site-width-medium: #{$media-breakpoint-medium - 8};
+	--site-width-small: #{$media-breakpoint-small - 5};
+	--site-width-mobile: #{$media-breakpoint-mobile - 2};
+}
 
-// }
+.wrapper {
+	--wrapper-max-width: var(--site-width-large);
 
-// .row {
-// 	max-width: var(--site-width-largest);
-// 	margin-left: auto;
-// 	margin-right: auto;
+	max-width: var(--wrapper-max-width);
+	margin-left: auto;
+	margin-right: auto;
 
-// 	// And here, we have an adaptive version:
-// 	@media (min-width: $media-breakpoint-large) {
-// 		width: Min(var(--site-width-large), var(--site-width-largest));
-// 	}
+	// And here, we have an adaptive version:
+	@media (max-width: #{$media-breakpoint-large}) {
+		max-width: Min(var(--site-width-medium), var(--wrapper-max-width));
+	}
 
-// 	// And here, we have an adaptive version:
-// 	@media (max-width: $media-breakpoint-large) {
-// 		width: Min(var(--site-width-medium), var(--row-max-width));
-// 	}
+	@media (max-width: #{$media-breakpoint-medium}) {
+		max-width: Min(var(--site-width-small), var(--wrapper-max-width));
+	}
 
-// 	@media (max-width: #{$media-breakpoint-medium}) {
-// 		width: Min(var(--site-width-mobile), var(--row-max-width));
-// 	}
+	@media (max-width: #{$media-breakpoint-small}) {
+		max-width: Min(var(--site-width-mobile), var(--wrapper-max-width));
+	}
 
-// 	@media (max-width: #{$media-breakpoint-mobile}) {
-// 		width: calc(100% - 2rem);
-// 	}
+	@media (max-width: #{$media-breakpoint-mobile}) {
+		max-width: calc(100% - 2rem);
+	}
+}
 
-// }
+.nav-wrapper {
+	max-width: calc(100% - 5rem);
+
+	@media (min-width: #{$media-breakpoint-large}) {
+		max-width: var(--site-width-large);
+	}
+
+	@media (max-width: #{$media-breakpoint-mobile}) {
+		max-width: calc(100% - 2rem);
+	}
+
+}

@@ -1,0 +1,30 @@
+.button {
+	font-size: 0.75em;
+	align-self: center;
+	padding:  0.9375rem 1.25rem;
+	border: 1px solid var(--primary);
+	color: var(--primary);
+	background-color: transparent;
+
+	span {
+		cursor: pointer;
+		display: inline-block;
+		position: relative;
+	}
+
+	&:hover {
+		background-color: var(--secondary-bg);
+	}
+
+	&__large {
+		width: 12em;
+		font-size: 1.25em;
+		font-weight: var(--semi-bold);
+		margin-top: 1.875rem;
+	}
+
+	&__small {
+		color: var(--related-resource);
+		text-transform: uppercase;
+	}
+}

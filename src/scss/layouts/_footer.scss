@@ -1,113 +1,72 @@
 .page-footer {
-	width: 100%;
-
-
 	.footer-container {
-		width: 75%;
 		margin: 0 auto;
-		@include flex (column, 40px, flex-start, center);
-		padding: 80px 0px;
+		@include flex (column, 2.5rem, flex-start, center);
+		padding: 5rem 0rem;
 		font-family: var(--lexend);
-
-		@media only screen and (max-width: 1300px) {
-			width: 80%;
-		}
-
-		@include tablet {
-			width: 90%;
-		}
-
-		@include big-mobile {
-			width: 95%;
-		}
 
 		.main-footer-container {
 			width: 100%;
-			@include flex (row, 0px, space-between, flex-end);
+			@include flex (row, 0em, space-between, flex-end);
 
-			@include big-mobile {
+			@include mobile {
 				display: grid;
 				justify-content: center;
-				gap: 40px;
+				gap: 2.5rem;
 			}
 
 			.contact-container {
-				@include flex (column, 5px, flex-start, flex-start);
+				@include flex (column, 0.3125rem, flex-start, flex-start);
 
-				@include big-mobile {
+				@include mobile {
 					grid-row: 1/2;
 					align-items: center;
 				}
 
 				.contact-title {
-					font-size: 14px;
+					font-size: 0.875em;
 					font-weight: var(--semi-bold);
-
-					@include big-monitor {
-						font-size: 18px;
-					}
-
-					@include monitor {
-						font-size: 16px;
-					}
 				}
 
 				.contact-info {
-					font-size: 14px;
+					font-size: 0.875em;
 					font-weight: var(--middle);
 					color: var(--footer-text);
 				}
 			}
 
 			.footer-logo {
-				@include flex (column, 15px, flex-start, center);
+				@include flex (column, 0.9375rem, flex-start, center);
 
-				@include big-mobile {
+				@include mobile {
 					grid-row: 3/4;
 				}
 
 				.footer-logo-image {
-					width: 30px;
-					height: 30px;
+					width: 1.875rem;
+					height: 1.875rem;
 				}
 
 				.footer-logo-text {
-					font-size: 18px;
+					font-size: 1.125em;
 					font-weight: var(--bold);
-
-					@include big-monitor {
-						font-size: 22px;
-					}
-
-					@include monitor {
-						font-size: 20px;
-					}
 				}
 			}
 
 			.social-media-container {
-				@include flex (column, 10px, flex-start, center);
+				@include flex (column, 0.625rem, flex-start, center);
 
 				.social-media-title {
-					font-size: 14px;
+					font-size: 0.875em;
 					font-weight: var(--semi-bold);
-
-					@include big-monitor {
-						font-size: 18px;
-					}
-
-					@include monitor {
-						font-size: 16px;
-					}
 				}
 
 				.social-media-icons {
-					width: 100%;
-					@include flex (row, 10px, center, center);
+					@include flex (row, 0.4375rem, center, center);
 
 					.social-media-icon-container {
-						width: 2em;
-						height: 2em;
+						width: 1.75em;
+						height: 1.75em;
 						@include flex (row, 0px, center, center);
 						border-radius: 50%;
 						background-color: var(--social-bg);
@@ -121,26 +80,13 @@
 		}
 
 		.copyright-container {
-			width: 80%;
 			text-align: center;
-
-			@include big-mobile {
-				width: 95%;
-			}
 
 			.copyright {
 				color: var(--footer-text);
-				font-size: 10px;
+				font-size: 0.875em;
 				text-transform: uppercase;
 				font-weight: var(--middle);
-
-				@include big-monitor {
-					font-size: 14px;
-				}
-
-				@include monitor {
-					font-size: 12px;
-				}
 			}
 		}
 	}

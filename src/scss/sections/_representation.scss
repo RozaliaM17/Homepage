@@ -4,44 +4,30 @@
 
 
 	.representation-container {
-		max-width: var(--max-width);
-		width: 75%;
 		margin: 0 auto;
-		@include flex (column, 20px, center, center);
+		@include flex (column, 1.25rem, center, center);
 		font-family: var(--lora);
-		padding: 150px 0px 80px 0px;
+		padding: 9.375rem 0rem 5rem 0rem;
 
-		@media only screen and (max-width: 1300px) {
-			width: 80%;
-		}
-
-		@include tablet {
-			width: 90%;
-		}
-
-		@include small-tablet {
-			padding: 50px 0px;
+		@include small {
+			padding: 3.125rem 0rem;
 			align-items: flex-start;
-		}
-
-		@include big-mobile {
-			width: 95%;
 		}
 
 		&.active {
 			.representation-section-title {
 				opacity: 1;
-				transform: translateY(0px);
+				transform: translateY(0rem);
 			}
 
 			.representation-section-subtitle {
 				opacity: 1;
-				transform: translateY(0px);
+				transform: translateY(0rem);
 			}
 
 			.representatives-grid {
 				opacity: 1;
-				transform: translateY(0px);
+				transform: translateY(0rem);
 			}
 		}
 
@@ -49,38 +35,30 @@
 			font-weight: var(--small);
 
 			@include scrolling-animation {
-				transform: translateY(50px);
+				transform: translateY(3.125rem);
 				opacity: 0;
-				transition: all 1s;
+				transition: opacity 1s ease-out, transform 1s ease-out;
 			}
 		}
 
 		.representation-section-subtitle {
-			width: 50%;
+			flex-basis: 50%;
 			margin: 0 auto;
 			font-weight: var(--semi-bold);
-			font-size: 0.9em;
+			font-size: 0.875em;
 			color: var(--sub-title);
 			line-height: 1.5;
 			text-align: center;
-			margin-bottom: 40px;
-
-			@media only screen and (max-width: 1300px) {
-				width: 60%;
-			}
-
-			@media only screen and (max-width: 1200px) {
-				width: 70%;
-			}
+			margin-bottom: 2.5rem;
 
 			@include scrolling-animation {
 				opacity: 0;
-				transition: all 1s ease-out;
-				transform: translateY(50px);
+				transition: opacity 1s ease-out, transform 1s ease-out;
+				transform: translateY(3.125rem);
 			}
 
-			@include small-tablet {
-				width: 90%;
+			@include small {
+				max-width: 90%;
 				margin: unset;
 				text-align: start;
 			}
@@ -88,34 +66,29 @@
 		}
 
 		.representatives-grid {
-			@include grid (repeat(auto-fit, minmax(220px, 1fr)), unset, 30px, center, flex-start);
-			width: 100%;
-
-			@media only screen and (max-width: 1200px) {
-				gap: 40px;
-			}
+			@include grid (repeat(auto-fit, minmax(15rem, 1fr)), unset, 1.875rem, center, flex-start);
+			max-width: 100%;
 
 			@include scrolling-animation {
-				transform: translateY(300px);
+				transform: translateY(18.75rem);
 				opacity: 0;
-				transition: all 2s ease-out;
+				transition: opacity 2s ease-out, transform 2s ease-out;
 			}
 
-			@include monitor {
-				transition: all 1s ease-out;
+			@include large {
+				transition: opacity 1s ease-out, transform 1s ease-out;
 			}
 
 			.representative-card {
-				@include flex (column, 20px, flex-start, center);
+				@include flex (column, 1.25rem, flex-start, center);
 
 				.representative-image-container {
 					position: relative;
 					width: 100%;
 
 					.representative-image {
-						max-width: 100%;
 						width: 100%;
-						min-height: 340px;
+						min-height: 21.25rem;
 					}
 
 					.representative-image-label {
@@ -123,54 +96,54 @@
 						bottom: -1px;
 						left: 0px;
 						padding: 12px 12px 7px 12px;
-						background-color: var(--secondary);
-						@include flex (row, 10px, center, flex-start);
+						background-color: var(--secondary-bg);
+						@include flex (row, 0.625rem, center, flex-start);
 
 						.representative-logo {
-							width: 20px;
-							height: 20px;
+							width: 1.25rem;
+							height: 1.25rem;
 						}
 
 						span {
 							font-style: italic;
 							font-weight: var(--small);
-							font-size: 0.85em;
+							font-size: 0.875em;
 						}
 					}
 				}
 
 				.representative-information {
-					@include flex (column, 10px, flex-start, flex-start);
+					@include flex (column, 0.625rem, flex-start, flex-start);
 
 					.representative-name {
 						letter-spacing: 1px;
-						font-size: 1.1em;				
+						font-size: 1.125em;				
 					}
 
 					.representative-position {
 						font-weight: var(--small);
-						font-size: 0.8em;
-						margin-bottom: 10px;
+						font-size: 0.875em;
+						margin-bottom: 0.625rem;
 					}
 
 					.representative-bio {
-						width: 90%;
+						max-width: 90%;
 						color: var(--bio);
 						font-weight: var(--middle);
-						font-size: 0.85em;
-						margin-bottom: 10px;
+						font-size: 0.875em;
+						margin-bottom: 0.625rem;
 
 					}
 
 					.read-feature-link {
 						border-bottom: 1px solid var(--read-link);
-						transition: all 0.2s ease-out;
+						transition: opacity 0.2s ease-out, transform 0.2s ease-out;
 
 						span {
 							display: inline-block;
 							position: relative;
 							color: var(--read-link);
-							font-size: 0.6em;
+							font-size: 0.75em;
 							font-weight: var(--middle);
 							text-transform: uppercase;
 							letter-spacing: 1px;

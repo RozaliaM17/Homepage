@@ -3,13 +3,6 @@ body {
 	height: var(--doc-height);
 }
 
-$media-breakpoint-largest: 88rem;
-$media-breakpoint-large: 92rem;
-$media-breakpoint-medium: 62rem;
-$media-breakpoint-small: 50rem;
-$media-breakpoint-mobile: 42rem;
-$breakpoint-mobile-navigation: 42em;
-
 :root {
 	// Colors
 	--primary: #000;
@@ -51,7 +44,7 @@ $breakpoint-mobile-navigation: 42em;
 
 
 	//Width 
-	--max-width: 1600px;
+	--max-width: 1152px;
 
 	// Fonts
 	--small: 400;
@@ -62,10 +55,10 @@ $breakpoint-mobile-navigation: 42em;
 	--lexend: 'Lexend', sans-serif;
 	--lora: 'Lora', serif;
 
-	--font-size-h1: 3em;
-	--font-size-h2: 2.75em;
-	--font-size-h3: 2.5em;
-	--font-size-h4: 2.25em;
-	--font-size-h5: 1.8em;
+	--font-size-h1: 2.75em;
+	--font-size-h2: 2.5em;
+	--font-size-h3: 2.25em;
+	--font-size-h4: 2em;
+	--font-size-h5: 1.875em;
 	--font-size-h6: 1.75em;
 }

@@ -12,7 +12,7 @@ var myWidth = window.innerWidth,
     scrollHeader = document.addEventListener("scroll", changeHeader);
 
 function changeHeader() {
-  100 <= window.scrollY ? desktopHeader.classList.add("scroll") : window.scrollY < 100 && desktopHeader.classList.remove("scroll");
+  50 <= window.scrollY ? desktopHeader.classList.add("scroll") : window.scrollY < 50 && desktopHeader.classList.remove("scroll");
 }
 
 function openMobileMenu() {
