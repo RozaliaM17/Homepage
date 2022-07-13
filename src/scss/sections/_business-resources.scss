@@ -1,99 +1,92 @@
-.business-resources-section {
-	width: 100%;
+.business {
+	margin: 0 auto;
+	@include flex (row, 4.375rem, flex-start, flex-start);
+	font-family: var(--lora);
+	padding: 5rem 0rem;
 
+	@include small {
+		@include flex (column, 3.75rem, flex-start, flex-start);
+	}
 
-	.business-resources-container {
-		margin: 0 auto;
-		@include flex (row, 4.375rem, flex-start, flex-start);
-		font-family: var(--lora);
-		padding: 5rem 0rem;
+	&.js-scroll-animation {
+		.business__introduction {
+			opacity: 1;
+			transform: translateX(0rem);
+		}
+
+		.related {
+			opacity: 1;
+			transform: translateY(0rem);
+		}
+	}
+
+	&__introduction {
+		flex-basis: 45%;
+		@include flex (column, 2.5rem, flex-start, flex-start);
+
+		@include scrolling-animation {
+			opacity: 0;
+			transition: opacity 1s ease-out, transform 1s ease-out;
+			transform: translateX(-9.375em);
+		}
 
 		@include small {
-			@include flex (column, 3.75rem, flex-start, flex-start);
+			flex-basis: unset;
+		}
+	}
+
+	&__heading {
+		font-weight: var(--small);
+	}
+
+	&__paragraph {
+		max-width: 90%;
+		font-size: 1.125em;
+		font-weight: var(--middle);
+		text-align: start;
+		line-height: 1.3;
+	}
+
+	.related {
+		flex-basis: 55%;
+		@include flex (column, 2.5rem, flex-start, flex-start);
+		padding-left: 1.25rem;
+
+		@include scrolling-animation {
+			opacity: 0;
+			transition: opacity 1s ease-out, transform 1s ease-out;
+			transform: translateY(9.375em);
 		}
 
-		&.active {
-			.business-resources-introduction {
-				opacity: 1;
-				transform: translateX(0rem);
-			}
-
-			.related-resources-container {
-				opacity: 1;
-				transform: translateY(0rem);
-			}
-		
+		@include small {
+			flex-basis: 100%;
+			gap: 1.875rem;
+			padding-left: 0px;
 		}
 
-		.business-resources-introduction {
-			flex-basis: 45%;
-			@include flex (column, 2.5rem, flex-start, flex-start);
-
-			@include scrolling-animation {
-				opacity: 0;
-				transition: opacity 1s ease-out, transform 1s ease-out;
-				transform: translateX(-9.375em);
-			}
-
-			@include small {
-				flex-basis: unset;
-			}
-
-			.business-resources-title {
-				font-weight: var(--small);
-			}
-
-			.business-resources-paragraph {
-				max-width: 90%;
-				font-size: 1.12em;
-				font-weight: var(--middle);
-				text-align: start;
-				line-height: 1.3;
-			}
+		&__heading {
+			font-size: 1.125em;
+			font-weight: var(--middle);
 		}
 
-		.related-resources-container {
-			flex-basis: 55%;
-			@include flex (column, 2.5rem, flex-start, flex-start);
-			padding-left: 1.25rem;
+		&__content {
+			@include flex (column, 1.875rem, flex-start, flex-start);
+		}
 
-			@include scrolling-animation {
-				opacity: 0;
-				transition: opacity 1s ease-out, transform 1s ease-out;
-				transform: translateY(9.375em);
-			}
+		&__category {
+			@include flex (column,  0.625rem, flex-start, flex-start);
+		}
 
-			@include small {
-				flex-basis: 100%;
-				gap: 1.875rem;
-				padding-left: 0px;
-			}
+		&__title {
+			font-size: 0.75em;
+			font-weight: var(--semi-bold);
+			text-transform: uppercase;
+			font-family: var(--lexend);
+		}
 
-			.related-resources-container-title {
-				font-size: 1.12em;
-				font-weight: var(--middle);
-			}
-
-			.related-resources-content {
-				@include flex (column, 1.875rem, flex-start, flex-start);
-
-				.related-resources-category {
-					@include flex (column,  0.625rem, flex-start, flex-start);
-				
-					.related-resources-category-title {
-						font-size: 0.75em;
-						font-weight: var(--semi-bold);
-						text-transform: uppercase;
-						font-family: var(--lexend);
-					}
-
-					.related-resource {
-						@include flex (row, 0.625rem, flex-start, flex-start);
-						flex-wrap: wrap;
-					}
-				}
-
-			}
+		&__resource {
+			@include flex (row, 0.625rem, flex-start, flex-start);
+			flex-wrap: wrap;
 		}
 	}
 }

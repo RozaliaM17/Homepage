@@ -1,7 +1,4 @@
-@import "../partials/_main-styles";
-
-.page-header {
-	margin: 0 auto;
+.header {
 	@include flex (column, 0rem, center, flex-start);
 	position: fixed;
 	top: 0;
@@ -14,7 +11,7 @@
 	color: var(--primary);
 	border-bottom: 1px solid var(--header-border);
 
-	&.scroll {
+	&.js-is-scroll {
 		background-color: rgba(0, 0, 0, 0.8);
 		color: var(--secondary);
 		border-bottom: none;
@@ -24,128 +21,48 @@
 		}
 	}
 
-	.desktop-header {
-		width: 100%;
+	&__container {
 		@include flex (row, 0.625rem, space-between, flex-end);
-		margin: 0 auto;
 		padding: 1.875rem 0rem;
+		margin: 0 auto;
+	}
 
-		.page-logo {
-			@include flex (row, 2px, flex-start, flex-end);
+	&__logo {
+		@include flex (row, 2px, flex-start, flex-end);
+	}
 
-			.page-logo-text {
-				font-size: 1.75em;
-				font-weight: var(--bold);
-			}
+	&__slogan {
+		font-size: 1.75em;
+	}
+
+	&__mobile-icon {
+		display: none;
+
+		@include tablet {
+			display: block;
 		}
 
-		.mobile-menu-open-icon {
+		&.js-is-hide {
 			display: none;
-
-			@include tablet {
-				display: block;
-			}
-
-			&.hide {
-				display: none;
-			}
-
-			.fa-bars {
-				margin-bottom: 5px;
-				font-size: 1.5em;
-			}
 		}
 
-		.header-navigation {
-			@include flex (row, 0rem, center, center);
-
-			@include tablet {
-				display: none;
-			}
-
-			.navigation-list {
-				@include flex (row, 1.5rem, space-between, center);
-
-				.navigation-list-item {
-					@include flex (column, 4px, flex-start, center);
-					position: relative;
-
-					.navigation-item-link {
-						font-size: 0.8125em;
-						padding: 5px;
-						cursor: pointer;
-					}
-
-					.dropdown-item-link { 
-						@include flex (row, 4px, center, center);
-
-						.fa-angle-down {
-							font-size: 0.75em;
-						}
-					}
-
-					.list-item-dropdown {
-						position: absolute;
-						top: 2.1875rem;
-						left: 0rem;
-						visibility: hidden;
-						opacity: 0;
-						padding: 0.625rem;
-						width: 11.875rem;
-						z-index: 1;
-
-						.dropdown-list {
-							@include flex (column, 0px, center, center);
-							background-color: var(--secondary);
-							box-shadow: 0px 0px 1.875rem rgb(127 137 161 / 25%);
-							border-radius: 5px;
-							list-style: none;
-
-							.dropdown-list-item {
-								width: 100%;
-								padding: 0.9375rem;
-								text-align: start;
-
-								.dropdown-list-link {
-									width: 100%;
-									cursor: pointer;
-									opacity: 0.6;
-									color: var(--primary);
-									font-weight: var(--middle);
-									font-size: 0.75em;
-
-									&:hover {
-										opacity: 1;
-									}
-								}
-							}
-						}
-					}
-
-					&:hover {
-						.list-item-dropdown {
-							visibility: visible;
-							opacity: 1;
-							transform: translate(0rem, -0.625rem);
-						}
-					}
-				}
-			}
-		}
-
-		.search-icon-container {
-			@include flex (row, 0px, flex-end, center);
-			width: 5%;
-			cursor: pointer;
+		.fa-bars {
 			margin-bottom: 5px;
-
-			@include tablet {
-				display: none;
-			}
+			font-size: 1.5em;
 		}
 	}
 
-	.mobile-header-container {
+	&__search {
+		@include flex (row, 0px, flex-end, center);
+		width: 5%;
+		margin-bottom: 5px;
+
+		@include tablet {
+			display: none;
+		}
+	}
+
+	&__mobile-container {
 		position: fixed;
 		top: 0px;
 		right: 0;
@@ -162,121 +79,41 @@
 		}
 
 
-		&.show {
+		&.js-is-show {
 			display: block;
 		}
+	}
 
-		.mobile-header {
-			flex-basis: 100%;
-			margin: 0 auto;
-			@include flex (column, 3.125rem, flex-start, flex-start);
-			height: 100%;
+	&__mobile {
+		@include flex (column, 3.125rem, flex-start, flex-start);
+		height: 100%;
+	}
 
-			.mobile-menu-close-icon {
-				display: block;
-				align-self: end;
-				color: var(--secondary);
+	&__close-icon {
+		display: block;
+		align-self: end;
+		color: var(--secondary);
 
-				.fa-xmark {
-					margin-bottom: 5px;
-					font-size: 1.3em;
-				}
-			}
-
-			.mobile-search {
-				@include flex (row, 0.9375rem, center, center);
-				cursor: pointer;
-				border-bottom: 1px solid var(--secondary);
-				padding: 0.625rem;
-
-				.mobile-search-input {
-					border: none;
-					outline: none;
-					background-color: var(--primary-bg);
-					color: var(--secondary);
-				}
-
-				.fa-magnifying-glass {
-					color: var(--secondary);
-				}
-
-				&:hover {
-					.fa-magnifying-glass {
-						font-size: 1.2em;
-					}
-				}
-			}
-
-			.mobile-header-navigation {
-				@include flex (column, 0rem, flex-start, center);
-				width: 100%;
-
-				.mobile-navigation-list {
-					width: 100%;
-					@include flex (column, 1.875rem, space-between, center);
-
-					.mobile-navigation-list-item {
-						@include flex (column, 0rem, flex-start, center);
-						position: relative;
-						width: 100%;
-						color: var(--secondary);
-
-						.mobile-navigation-item-link {
-							font-size: 1.2em;
-							padding: 5px;
-							cursor: pointer;
-							width: 100%;
-							text-align: start;
-							outline: none;
-
-							&:hover {
-								font-weight: var(--semi-bold);
-							}
-						}
-
-						.mobile-dropdown-item-link { 
-							@include flex (row, 4px, center, center);
-							width: 100%;
-
-							.fa-angle-down {
-								font-size: 0.875em;
-							}
-						}
-
-						.mobile-list-item-dropdown {
-							transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-							max-height: 0px;
-							overflow: hidden;
-							width: 100%;
-
-							&.open {
-								padding: 0.625rem;
-							}
-
-							.mobile-dropdown-list {
-								@include flex (column, 0px, center, center);
-
-								.mobile-dropdown-list-item {
-									width: 100%;
-									padding: 1.25rem 0.9375rem;
-
-									.mobile-dropdown-list-link {
-										text-align: start;
-										font-size: 0.875em;
-										font-weight: var(--semi-bold);
-										opacity: 0.6;
-										cursor: pointer;
-
-										&:hover {
-											opacity: 1;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
+		.fa-xmark {
+			margin-bottom: 5px;
+			font-size: 1.3em;
 		}
+	}
+
+	&__mobile-search {
+		@include flex (row, 0.9375rem, center, center);
+		border-bottom: 1px solid var(--secondary);
+		padding: 0.625rem;
+
+		.fa-magnifying-glass {
+			color: var(--secondary);
+		}
+	}
+
+	&__mobile-input {
+		border: none;
+		outline: none;
+		background-color: var(--primary-bg);
+		color: var(--secondary);
 	}
 }

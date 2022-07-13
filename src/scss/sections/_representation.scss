@@ -1,159 +1,146 @@
-.representation-section {
-	width: 100%;
+.representation {
 	margin: 0 auto;
+	@include flex (column, 1.25rem, center, center);
+	font-family: var(--lora);
+	padding: 9.375rem 0rem 5rem 0rem;
 
+	@include small {
+		padding: 3.125rem 0rem;
+		align-items: flex-start;
+	}
 
-	.representation-container {
-		margin: 0 auto;
-		@include flex (column, 1.25rem, center, center);
-		font-family: var(--lora);
-		padding: 9.375rem 0rem 5rem 0rem;
-
-		@include small {
-			padding: 3.125rem 0rem;
-			align-items: flex-start;
+	&.js-scroll-animation {
+		.representation__heading {
+			opacity: 1;
+			transform: translateY(0rem);
 		}
 
-		&.active {
-			.representation-section-title {
-				opacity: 1;
-				transform: translateY(0rem);
-			}
-
-			.representation-section-subtitle {
-				opacity: 1;
-				transform: translateY(0rem);
-			}
-
-			.representatives-grid {
-				opacity: 1;
-				transform: translateY(0rem);
-			}
+		.representation__subtitle {
+			opacity: 1;
+			transform: translateY(0rem);
 		}
 
-		.representation-section-title {
-			font-weight: var(--small);
-
-			@include scrolling-animation {
-				transform: translateY(3.125rem);
-				opacity: 0;
-				transition: opacity 1s ease-out, transform 1s ease-out;
-			}
-		}
-
-		.representation-section-subtitle {
-			flex-basis: 50%;
-			margin: 0 auto;
-			font-weight: var(--semi-bold);
-			font-size: 0.875em;
-			color: var(--sub-title);
-			line-height: 1.5;
-			text-align: center;
-			margin-bottom: 2.5rem;
-
-			@include scrolling-animation {
-				opacity: 0;
-				transition: opacity 1s ease-out, transform 1s ease-out;
-				transform: translateY(3.125rem);
-			}
-
-			@include small {
-				max-width: 90%;
-				margin: unset;
-				text-align: start;
-			}
-
-		}
-
-		.representatives-grid {
-			@include grid (repeat(auto-fit, minmax(15rem, 1fr)), unset, 1.875rem, center, flex-start);
-			max-width: 100%;
-
-			@include scrolling-animation {
-				transform: translateY(18.75rem);
-				opacity: 0;
-				transition: opacity 2s ease-out, transform 2s ease-out;
-			}
-
-			@include large {
-				transition: opacity 1s ease-out, transform 1s ease-out;
-			}
-
-			.representative-card {
-				@include flex (column, 1.25rem, flex-start, center);
-
-				.representative-image-container {
-					position: relative;
-					width: 100%;
-
-					.representative-image {
-						width: 100%;
-						min-height: 21.25rem;
-					}
-
-					.representative-image-label {
-						position: absolute;
-						bottom: -1px;
-						left: 0px;
-						padding: 12px 12px 7px 12px;
-						background-color: var(--secondary-bg);
-						@include flex (row, 0.625rem, center, flex-start);
-
-						.representative-logo {
-							width: 1.25rem;
-							height: 1.25rem;
-						}
-
-						span {
-							font-style: italic;
-							font-weight: var(--small);
-							font-size: 0.875em;
-						}
-					}
-				}
-
-				.representative-information {
-					@include flex (column, 0.625rem, flex-start, flex-start);
-
-					.representative-name {
-						letter-spacing: 1px;
-						font-size: 1.125em;				
-					}
-
-					.representative-position {
-						font-weight: var(--small);
-						font-size: 0.875em;
-						margin-bottom: 0.625rem;
-					}
-
-					.representative-bio {
-						max-width: 90%;
-						color: var(--bio);
-						font-weight: var(--middle);
-						font-size: 0.875em;
-						margin-bottom: 0.625rem;
-
-					}
-
-					.read-feature-link {
-						border-bottom: 1px solid var(--read-link);
-						transition: opacity 0.2s ease-out, transform 0.2s ease-out;
-
-						span {
-							display: inline-block;
-							position: relative;
-							color: var(--read-link);
-							font-size: 0.75em;
-							font-weight: var(--middle);
-							text-transform: uppercase;
-							letter-spacing: 1px;
-							cursor: pointer;
-						}
-					}
-				}
-			}
+		.representation__grid {
+			opacity: 1;
+			transform: translateY(0rem);
 		}
 	}
 
+	&__heading {
+		font-weight: var(--small);
 
+		@include scrolling-animation {
+			transform: translateY(3.125rem);
+			opacity: 0;
+			transition: opacity 1s ease-out, transform 1s ease-out;
+		}
+	}
+
+	&__subtitle {
+		max-width: 60%;
+		margin: 0 auto;
+		font-weight: var(--semi-bold);
+		font-size: 0.875em;
+		color: var(--sub-title);
+		line-height: 1.5;
+		text-align: center;
+		margin-bottom: 2.5rem;
+
+		@include scrolling-animation {
+			opacity: 0;
+			transition: opacity 1s ease-out, transform 1s ease-out;
+			transform: translateY(3.125rem);
+		}
+
+		@include small {
+			max-width: 90%;
+			margin: unset;
+			text-align: start;
+		}
+
+	}
+
+	&__grid {
+		@include grid (repeat(auto-fit, minmax(15rem, 1fr)), unset, 1.875rem, center, flex-start);
+		max-width: 100%;
+
+		@include scrolling-animation {
+			transform: translateY(18.75rem);
+			opacity: 0;
+			transition: opacity 2s ease-out, transform 2s ease-out;
+		}
+
+		@include large {
+			transition: opacity 1s ease-out, transform 1s ease-out;
+		}
+	}
+
+	&__card {
+		@include flex (column, 1.25rem, flex-start, center);
+	}
+
+	&__image-container {
+		position: relative;
+		width: 100%;
+	}
+
+	&__image {
+		width: 100%;
+		min-height: 21.25rem;
+	}
+
+	&__image-label {
+		position: absolute;
+		bottom: -1px;
+		left: 0px;
+		padding: 12px 12px 7px 12px;
+		background-color: var(--secondary-bg);
+		@include flex (row, 0.625rem, center, flex-start);
+	}
+
+	&__label {
+		font-size: 0.875em;
+	}
+
+	&__logo {
+		width: 1.25rem;
+		height: 1.25rem;
+	}
+
+	&__information {
+		@include flex (column, 0.625rem, flex-start, flex-start);
+	}
+
+	&__name {
+		letter-spacing: 1px;
+		font-size: 1.125em;				
+	}
+
+	&__position {
+		font-weight: var(--small);
+		font-size: 0.875em;
+		margin-bottom: 0.625rem;
+	}
+
+	&__bio {
+		max-width: 90%;
+		color: var(--bio);
+		font-weight: var(--middle);
+		font-size: 0.875em;
+		margin-bottom: 0.625rem;
+
+	}
+
+	&__link {
+		border-bottom: 1px solid var(--read-link);
+		transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+		display: inline-block;
+		position: relative;
+		color: var(--read-link);
+		font-size: 0.75em;
+		font-weight: var(--middle);
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		cursor: pointer;
+	}
 }

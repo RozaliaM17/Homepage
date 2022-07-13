@@ -1,93 +1,92 @@
-.page-footer {
-	.footer-container {
-		margin: 0 auto;
-		@include flex (column, 2.5rem, flex-start, center);
-		padding: 5rem 0rem;
-		font-family: var(--lexend);
+.footer {
+	margin: 0 auto;
+	@include flex (column, 2.5rem, flex-start, center);
+	padding: 5rem 0rem;
+	font-family: var(--lexend);
 
-		.main-footer-container {
-			width: 100%;
-			@include flex (row, 0em, space-between, flex-end);
+	&__main {
+		width: 100%;
+		@include flex (row, 0em, space-between, flex-end);
 
-			@include mobile {
-				display: grid;
-				justify-content: center;
-				gap: 2.5rem;
-			}
+		@include mobile {
+			display: grid;
+			justify-content: center;
+			gap: 2.5rem;
+		}
+	}
 
-			.contact-container {
-				@include flex (column, 0.3125rem, flex-start, flex-start);
+	&__contact {
+		@include flex (column, 0.3125rem, flex-start, flex-start);
 
-				@include mobile {
-					grid-row: 1/2;
-					align-items: center;
-				}
-
-				.contact-title {
-					font-size: 0.875em;
-					font-weight: var(--semi-bold);
-				}
-
-				.contact-info {
-					font-size: 0.875em;
-					font-weight: var(--middle);
-					color: var(--footer-text);
-				}
-			}
-
-			.footer-logo {
-				@include flex (column, 0.9375rem, flex-start, center);
-
-				@include mobile {
-					grid-row: 3/4;
-				}
-
-				.footer-logo-image {
-					width: 1.875rem;
-					height: 1.875rem;
-				}
-
-				.footer-logo-text {
-					font-size: 1.125em;
-					font-weight: var(--bold);
-				}
-			}
-
-			.social-media-container {
-				@include flex (column, 0.625rem, flex-start, center);
-
-				.social-media-title {
-					font-size: 0.875em;
-					font-weight: var(--semi-bold);
-				}
-
-				.social-media-icons {
-					@include flex (row, 0.4375rem, center, center);
-
-					.social-media-icon-container {
-						width: 1.75em;
-						height: 1.75em;
-						@include flex (row, 0px, center, center);
-						border-radius: 50%;
-						background-color: var(--social-bg);
-
-						i {
-							color: var(--social-icon);
-						}
-					}
-				}
-			}
+		@include mobile {
+			grid-row: 1/2;
+			align-items: center;
 		}
 
-		.copyright-container {
-			text-align: center;
+		&-title {
+			font-size: 0.875em;
+			font-weight: var(--semi-bold);
+		}
 
-			.copyright {
-				color: var(--footer-text);
-				font-size: 0.875em;
-				text-transform: uppercase;
-				font-weight: var(--middle);
+		&-info {
+			font-size: 0.875em;
+			font-weight: var(--middle);
+			color: var(--footer-text);
+		}
+	}
+
+	&__logo {
+		@include flex (column, 0.9375rem, flex-start, center);
+
+		@include mobile {
+			grid-row: 3/4;
+		}
+
+		&-image {
+			width: 1.875rem;
+			height: 1.875rem;
+		}
+
+		&-text {
+			font-size: 1.125em;
+			font-weight: var(--bold);
+		}
+	}
+
+	&__social {
+		@include flex (column, 0.625rem, flex-start, center);
+
+		&-title {
+			font-size: 0.875em;
+			font-weight: var(--semi-bold);
+		}
+
+		&-icons {
+			@include flex (row, 0.4375rem, center, center);
+		}
+
+		&-icon__container {
+			width: 1.75em;
+			height: 1.75em;
+			@include flex (row, 0px, center, center);
+			border-radius: 50%;
+			background-color: var(--social-bg);
+
+			i {
+				color: var(--social-icon);
+				cursor: pointer;
 			}
+		}
+	}
+
+	&__copyright{
+		text-align: center;
+
+		.copyright {
+			color: var(--footer-text);
+			font-size: 0.875em;
+			text-transform: uppercase;
+			font-weight: var(--middle);
 		}
 	}
 }

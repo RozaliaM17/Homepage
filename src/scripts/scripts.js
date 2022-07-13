@@ -2,40 +2,38 @@ window.addEventListener("scroll", reveal);
 document.addEventListener("DOMContentLoaded", scrollAnimation);
 
 const myWidth = window.innerWidth;
-const reveals = document.querySelectorAll(".reveal");
-const headerNav = document.querySelector(".header-navigation");
-const searchContainer = document.querySelector(".search-icon-container");
-const mobileHeaderContainer = document.querySelector(".mobile-header-container");
+const reveals = document.querySelectorAll(".js-is-reveal");
+const mobileHeaderContainer = document.querySelector(".header__mobile-container");
 
-const mobileMenuCloseIcon = document.querySelector(".mobile-menu-close-icon");
+const mobileMenuCloseIcon = document.querySelector(".header__close-icon");
 mobileMenuCloseIcon.addEventListener("click", closeMobileMenu);
 
-const mobileMenuOpenIcon = document.querySelector(".mobile-menu-open-icon");
+const mobileMenuOpenIcon = document.querySelector(".header__mobile-icon");
 mobileMenuOpenIcon.addEventListener("click", openMobileMenu);
 
-const desktopHeader = document.querySelector(".page-header");
+const desktopHeader = document.querySelector(".header");
 const scrollHeader = document.addEventListener("scroll", changeHeader);
 
 
 function changeHeader() {
   if (window.scrollY >= 50) {
-    desktopHeader.classList.add("scroll");
+    desktopHeader.classList.add("js-is-scroll");
   } else if (window.scrollY < 50) {
-    desktopHeader.classList.remove("scroll");
+    desktopHeader.classList.remove("js-is-scroll");
   }
 }
 
 // Open mobile menu
 function openMobileMenu() {
-  mobileHeaderContainer.classList.add("show");
-  mobileMenuOpenIcon.classList.add("hide");
+  mobileHeaderContainer.classList.add("js-is-show");
+  mobileMenuOpenIcon.classList.add("js-is-hide");
 }
 
 
 // Close mobile menu
 function closeMobileMenu() {
-  mobileHeaderContainer.classList.remove("show");
-  mobileMenuOpenIcon.classList.remove("hide");
+  mobileHeaderContainer.classList.remove("js-is-show");
+  mobileMenuOpenIcon.classList.remove("js-is-hide");
 }
 
 // Close the mobile menu, when click outside the box
@@ -60,25 +58,25 @@ window.onbeforeunload = function () {
 
 
 // Mobile Dropdown
-var mobileDropdownContainer = document.querySelectorAll(".mobile-dropdown-item");
+var mobileDropdownContainer = document.querySelectorAll(".dropdown-title");
 for (var i = 0; i < mobileDropdownContainer.length; i++) {
   mobileDropdownContainer[i].children[0].addEventListener("click", (event) => {
-    let dropdownItem = event.target.closest(".mobile-dropdown-item-link");
+    let dropdownItem = event.currentTarget;
     let dropdown = dropdownItem.nextElementSibling;
     dropdown.style.maxHeight = dropdown.style.maxHeight ? null : dropdown.scrollHeight + "px";
-    dropdown.classList.toggle("open");
+    dropdown.classList.toggle("js-is-open");
   });
 }
 
 
 //  Scroll animations for introduction section
 function scrollAnimation() {
-  let introductionSection = document.querySelector(".introduction-container");
-  let representationSection = document.querySelector(".representation-container");
-  introductionSection.classList.add("active");
+  let introductionSection = document.querySelector(".introduction__container");
+  let representationSection = document.querySelector(".representation");
+  introductionSection.classList.add("js-custom-scroll-animation");
   if (window.innerWidth > 1600) {
-    representationSection.classList.add("active");
-    representationSection.classList.remove("reveal");
+    representationSection.classList.add("activejs-scroll-animation");
+    representationSection.classList.remove("js-is-reveal");
   }
 }
 
@@ -90,7 +88,7 @@ function reveal() {
     var elementTop = reveals[i].getBoundingClientRect().top;
     var elementVisible = 200;
     if (elementTop < windowHeight - elementVisible) {
-      reveals[i].classList.add("active");
+      reveals[i].classList.add("js-scroll-animation");
     }
   }
 }

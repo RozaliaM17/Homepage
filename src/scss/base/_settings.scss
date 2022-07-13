@@ -61,4 +61,11 @@ body {
 	--font-size-h4: 2em;
 	--font-size-h5: 1.875em;
 	--font-size-h6: 1.75em;
+
+	--site-width-large: #{$media-breakpoint-large - 8};
+	--site-width-medium: #{$media-breakpoint-medium - 8};
+	--site-width-small: #{$media-breakpoint-small - 5};
+	--site-width-mobile: #{$media-breakpoint-mobile - 2};
+
+	--wrapper-max-width: var(--site-width-large);
 }
