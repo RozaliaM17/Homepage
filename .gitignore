@@ -1,0 +1,8 @@
+# Content generated through npm packages
+node_modules/
+assets/sass/.cache-location
+assets/css/*.map
+.sass-cache/
+npm-debug.log
+bower_components/
+

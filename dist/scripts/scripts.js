@@ -37,7 +37,7 @@ for (var mobileDropdownContainer = document.querySelectorAll(".dropdown-title"),
 function scrollAnimation() {
   var e = document.querySelector(".introduction__container"),
       n = document.querySelector(".representation");
-  e.classList.add("js-custom-scroll-animation"), 1600 < window.innerWidth && (n.classList.add("activejs-scroll-animation"), n.classList.remove("js-is-reveal"));
+  1200 <= window.innerWidth && (e.classList.add("js-custom-scroll-animation"), n.classList.add("js-scroll-animation"));
 }
 
 function reveal() {

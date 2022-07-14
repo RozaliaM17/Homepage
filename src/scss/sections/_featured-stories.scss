@@ -3,7 +3,7 @@
 	@include flex (row, 3.75rem, center, flex-start);
 	font-family: var(--lora);
 	padding: 3.125em 0rem;
-	border-bottom: 2px solid var(--section-border);
+	border-bottom: 2px solid var(--color-separator-base-near);
 
 	@include small {
 		flex-direction: column;

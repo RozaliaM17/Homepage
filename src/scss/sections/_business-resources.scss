@@ -2,7 +2,7 @@
 	margin: 0 auto;
 	@include flex (row, 4.375rem, flex-start, flex-start);
 	font-family: var(--lora);
-	padding: 5rem 0rem;
+	padding: 3.125rem 0rem;
 
 	@include small {
 		@include flex (column, 3.75rem, flex-start, flex-start);

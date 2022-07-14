@@ -1,8 +1,8 @@
 .latest {
-	padding: 5rem 0rem;
+	padding: 3.125rem 0rem;
 	margin: 0 auto;
 	@include flex (column, 2.5rem, flex-start, flex-start);
-	border-bottom: 2px solid var(--section-border);
+	border-bottom: 2px solid var(--color-separator-base-near);
 
 	&.js-scroll-animation {
 		.latest__heading {

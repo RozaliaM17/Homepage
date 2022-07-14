@@ -1,8 +1,9 @@
 $media-breakpoint-largest: 88rem;
 $media-breakpoint-large: 92rem;
 $media-breakpoint-medium: 75rem;
-$media-breakpoint-small: 60rem;
-$media-breakpoint-mobile: 52rem;
+$media-breakpoint-tablet: 60rem;
+$media-breakpoint-small: 52rem;
+$media-breakpoint-mobile: 35rem;
 $breakpoint-mobile-navigation: 42rem;
 
 
@@ -43,11 +44,15 @@ h6 {
 	}
 
 	@media (max-width: #{$media-breakpoint-medium}) {
+		max-width: Min(var(--site-width-tablet), var(--wrapper-max-width));
+	}
+
+	@media (max-width: #{$media-breakpoint-tablet}) {
 		max-width: Min(var(--site-width-small), var(--wrapper-max-width));
 	}
 
 	@media (max-width: #{$media-breakpoint-small}) {
-		max-width: Min(var(--site-width-mobile), var(--wrapper-max-width));
+		max-width: calc(100% - 2rem);
 	}
 
 	@media (max-width: #{$media-breakpoint-mobile}) {
@@ -62,7 +67,7 @@ h6 {
 		max-width: var(--site-width-large);
 	}
 
-	@media (max-width: #{$media-breakpoint-mobile}) {
+	@media (max-width: #{$media-breakpoint-tablet}) {
 		max-width: calc(100% - 2rem);
 	}
 

@@ -11,10 +11,6 @@
 		position: relative;
 		font-family: var(--lexend);
 
-		@include tablet {
-			margin: 7rem auto;
-		}
-
 		@include small {
 			grid-template-columns: unset;
 			grid-template-rows: 0.6fr 1.5fr;
@@ -96,7 +92,7 @@
 		margin-bottom: -6.25rem;
 
 		@include large {
-			height: 45em;
+			height: 40em;
 		}
 
 		@include small {

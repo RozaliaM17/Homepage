@@ -11,7 +11,7 @@ body {
 	--color-secondary: #fff;
 	--color-secondary-near: #f6f4f0;
 
-	--color-separator-base: #f1f1f1 ;
+	--color-separator-base: #f1f1f1;
 	--color-separator-base-near: #e7e7e7;
 
 	--color-base: #979797;
@@ -39,7 +39,8 @@ body {
 
 	--site-width-large: #{$media-breakpoint-large - 8};
 	--site-width-medium: #{$media-breakpoint-medium - 8};
-	--site-width-small: #{$media-breakpoint-small - 5};
+	--site-width-tablet: #{$media-breakpoint-tablet - 5};
+	--site-width-small: #{$media-breakpoint-small - 2};
 	--site-width-mobile: #{$media-breakpoint-mobile - 2};
 
 	--wrapper-max-width: var(--site-width-large);

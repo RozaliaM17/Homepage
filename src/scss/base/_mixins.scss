@@ -17,31 +17,31 @@
 
 
 @mixin large {
-	@media only screen and (min-width: 1400px) {
+	@media (max-width: #{$media-breakpoint-large}) {
 		@content;
 	}
 }
 
 @mixin scrolling-animation {
-	@media only screen and (min-width: 1150px) {
+	@media (min-width: #{$media-breakpoint-medium}) {
 		@content;
 	}
 }
 
 @mixin tablet {
-	@media only screen and (max-width: 990px) {
+	@media (max-width: #{$media-breakpoint-tablet}) {
 		@content;
 	}
 }
 
 @mixin small{
-	@media only screen and (max-width: 800px) {
+	@media (max-width: #{$media-breakpoint-small}) {
 		@content;
 	}
 }
 
 @mixin mobile {
-	@media only screen and (max-width: 560px) {
+	@media (max-width: #{$media-breakpoint-mobile}) {
 		@content;
 	}
 }
