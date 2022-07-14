@@ -22,6 +22,7 @@
 	}
 
 	&__container {
+		width: 100%;
 		@include flex (row, 0.625rem, space-between, flex-end);
 		padding: 1.875rem 0rem;
 		margin: 0 auto;
@@ -32,6 +33,7 @@
 	}
 
 	&__slogan {
+		font-weight: var(--bold);
 		font-size: 1.75em;
 	}
 
@@ -104,6 +106,7 @@
 		@include flex (row, 0.9375rem, center, center);
 		border-bottom: 1px solid var(--secondary);
 		padding: 0.625rem;
+		cursor: pointer;
 
 		.fa-magnifying-glass {
 			color: var(--secondary);

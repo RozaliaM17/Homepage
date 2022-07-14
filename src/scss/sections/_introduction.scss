@@ -54,21 +54,30 @@
 	}
 
 	&__subtitle {
-		color: #585858;		
+		color: #585858;	
+		text-transform: uppercase;
+		font-weight: var(--middle);	
+		font-size: 0.75em;
 	}
 
 	&__heading {
 		font-family: omega;
+		font-weight: var(--middle);	
 	}
 
 	&__paragraph {
 		color: var(--link);
+		line-height: 1.6;
+		font-size: 0.875em;
 	}
 
 	&__link {
 		border-bottom: 1px solid var(--link-border);
 		display: inline-block;
 		position: relative;
+		cursor: pointer;
+		text-transform: uppercase;
+		font-size: 0.75em;
 	}
 
 	&__picture {
@@ -127,6 +136,7 @@
 		font-size: 0.75em;
 		font-style: italic;
 		font-weight: var(--middle);
+		text-transform: uppercase;
 	}
 
 	&__quote { 
@@ -172,5 +182,9 @@
 		text-transform: uppercase;
 		font-size: 0.75em;
 		font-weight: var(--small);
+
+		&.bold {
+			font-weight: var(--bold);
+		}
 	}
 }
