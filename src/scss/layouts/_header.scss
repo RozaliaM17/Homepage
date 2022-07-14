@@ -70,7 +70,7 @@
 		right: 0;
 		height: var(--doc-height);
 		width: 50%;
-		background-color: rgba(0, 0, 0, 0.92);
+		background-color: var(--primary);
 		padding: 1.5625rem;
 		z-index: 2;
 		transition: width 0.3s ease-out;
@@ -79,7 +79,6 @@
 		@include mobile {
 			width: 100%;
 		}
-
 
 		&.js-is-show {
 			display: block;

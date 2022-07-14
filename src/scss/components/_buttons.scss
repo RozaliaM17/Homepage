@@ -5,9 +5,9 @@
 	border: 1px solid var(--primary);
 	color: var(--primary);
 	background-color: transparent;
+	cursor: pointer;
 
 	span {
-		cursor: pointer;
 		display: inline-block;
 		position: relative;
 	}

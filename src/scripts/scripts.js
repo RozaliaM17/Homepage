@@ -1,7 +1,6 @@
 window.addEventListener("scroll", reveal);
 document.addEventListener("DOMContentLoaded", scrollAnimation);
 
-const myWidth = window.innerWidth;
 const reveals = document.querySelectorAll(".js-is-reveal");
 const mobileHeaderContainer = document.querySelector(".header__mobile-container");
 
@@ -28,7 +27,6 @@ function openMobileMenu() {
   mobileHeaderContainer.classList.add("js-is-show");
   mobileMenuOpenIcon.classList.add("js-is-hide");
 }
-
 
 // Close mobile menu
 function closeMobileMenu() {

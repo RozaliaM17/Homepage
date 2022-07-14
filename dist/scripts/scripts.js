@@ -1,8 +1,7 @@
 "use strict";
 
 window.addEventListener("scroll", reveal), document.addEventListener("DOMContentLoaded", scrollAnimation);
-var myWidth = window.innerWidth,
-    reveals = document.querySelectorAll(".js-is-reveal"),
+var reveals = document.querySelectorAll(".js-is-reveal"),
     mobileHeaderContainer = document.querySelector(".header__mobile-container"),
     mobileMenuCloseIcon = document.querySelector(".header__close-icon"),
     mobileMenuOpenIcon = (mobileMenuCloseIcon.addEventListener("click", closeMobileMenu), document.querySelector(".header__mobile-icon")),
