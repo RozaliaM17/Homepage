@@ -41,7 +41,7 @@
 		margin: 0 auto;
 		font-weight: var(--semi-bold);
 		font-size: 0.875em;
-		color: var(--sub-title);
+		color: var(--color-base);
 		line-height: 1.5;
 		text-align: center;
 		margin-bottom: 2.5rem;
@@ -94,7 +94,7 @@
 		bottom: -1px;
 		left: 0px;
 		padding: 12px 12px 7px 12px;
-		background-color: var(--secondary-bg);
+		background-color: var(--color-secondary-near);
 		@include flex (row, 0.625rem, center, flex-start);
 	}
 
@@ -124,23 +124,10 @@
 
 	&__bio {
 		max-width: 90%;
-		color: var(--bio);
-		font-weight: var(--middle);
+		color: var(--color-base);
+		font-weight: var(--semi-bold);
 		font-size: 0.875em;
 		margin-bottom: 0.625rem;
 
-	}
-
-	&__link {
-		border-bottom: 1px solid var(--read-link);
-		transition: opacity 0.2s ease-out, transform 0.2s ease-out;
-		display: inline-block;
-		position: relative;
-		color: var(--read-link);
-		font-size: 0.75em;
-		font-weight: var(--middle);
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		cursor: pointer;
 	}
 }

@@ -80,18 +80,4 @@
 		font-size: 1.125em;
 		font-weight: var(--semi-bold);
 	}
-
-	&__link {
-		border-bottom: 1px solid var(--primary);
-
-		span {
-			display: inline-block;
-			position: relative;
-			font-size: 0.75em;
-			font-weight: var(--small);
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			cursor: pointer;
-		}
-	}
 }

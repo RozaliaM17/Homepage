@@ -5,46 +5,21 @@ body {
 
 :root {
 	// Colors
-	--primary: #000;
-	--secondary: #fff;
+	--color-primary: #000;
+	--color-primary-near: #343130;
+	--color-primary-cover: rgba(0, 0, 0, 0.5);
+	--color-secondary: #fff;
+	--color-secondary-near: #f6f4f0;
 
-	--primary-bg: transparent;
-	--secondary-bg: #f6f4f0;
+	--color-separator-base: #f1f1f1 ;
+	--color-separator-base-near: #e7e7e7;
 
-	--section-border: #e7e7e7;
-	--header-border: #f1f1f1;
-
-	// Footer section
-	--footer-text: #b8b8b8;
-	--social-bg: #000;
-	--social-icon: #fefefe;
-
-	// About section
-	--about-subtitle: #484642;
-	--about-link: #c7c4c2;
-
-	// Business resources section
-	--related-resource: #202020;
-	--related-resource-border: #c0c0c0;
-
-	// Introduction section
-	--image-cover: rgba(0, 0, 0, 0.5);
-	--paragraph-text: #999999;
-	--link: #979797;
-	--link-border: #505050;
-
-	// Featured Stories section
-	--featured-paragraph: #969696;
-	--other-stories-bio: #6a6a6a;
-
-	// Representation section
-	--sub-title: #979594;
-	--bio: #83817e;
-	--read-link: #343130;
-
-
-	//Width 
-	--max-width: 1152px;
+	--color-base: #979797;
+	--color-base-light: #b8b8b8;
+	--color-base-lighter: #fefefe;
+	--color-base-invert: #696969;
+	--color-base-invert-near: #6a6a6a;
+	--color-base-invert-darker: #0b0b0b;
 
 	// Fonts
 	--small: 400;

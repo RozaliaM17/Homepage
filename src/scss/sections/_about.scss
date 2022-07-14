@@ -69,7 +69,7 @@
 	&__subtitle {
 		text-transform: uppercase;
 		font-size: 0.75em;
-		color: var(--about-subtitle);
+		color: var(--color-base-invert);
 		font-weight: var(--small);
 
 		@include small {
@@ -80,11 +80,10 @@
 	&__paragraph {
 		font-size: 1.125em;
 		font-weight: var(--middle);
-		text-align: start;
 	}
 
 	&__link {
-		border-bottom: 2px solid var(--about-link);
+		border-bottom: 2px solid var(--color-base-invert-darker);
 		margin-top: 10px;
 
 		span {

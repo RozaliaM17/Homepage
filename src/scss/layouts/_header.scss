@@ -6,14 +6,12 @@
 	right: 0;
 	z-index: 2;
 	font-family: var(--lexend);
-	background-color: var(--primary-bg);
 	transition: background-color 0.1s ease-out, color 0.1s ease-out;
-	color: var(--primary);
-	border-bottom: 1px solid var(--header-border);
+	border-bottom: 1px solid var(--color-separator-base);
 
 	&.js-is-scroll {
 		background-color: rgba(0, 0, 0, 0.8);
-		color: var(--secondary);
+		color: var(--color-secondary);
 		border-bottom: none;
 
 		.desktop-header {
@@ -70,7 +68,7 @@
 		right: 0;
 		height: var(--doc-height);
 		width: 50%;
-		background-color: var(--primary);
+		background-color: var(--color-primary);
 		padding: 1.5625rem;
 		z-index: 2;
 		transition: width 0.3s ease-out;
@@ -93,7 +91,7 @@
 	&__close-icon {
 		display: block;
 		align-self: end;
-		color: var(--secondary);
+		color: var(--color-secondary);
 
 		.fa-xmark {
 			margin-bottom: 5px;
@@ -103,19 +101,19 @@
 
 	&__mobile-search {
 		@include flex (row, 0.9375rem, center, center);
-		border-bottom: 1px solid var(--secondary);
+		border-bottom: 1px solid var(--color-secondary);
 		padding: 0.625rem;
 		cursor: pointer;
 
 		.fa-magnifying-glass {
-			color: var(--secondary);
+			color: var(--color-secondary);
 		}
 	}
 
 	&__mobile-input {
 		border: none;
 		outline: none;
-		background-color: var(--primary-bg);
-		color: var(--secondary);
+		background-color: transparent;
+		color: var(--color-secondary);
 	}
 }

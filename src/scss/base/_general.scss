@@ -68,10 +68,29 @@ h6 {
 
 }
 
-.section__link--italic {
+.section__category--italic {
 	font-style: italic;
 	font-weight: var(--small);
 	font-family: none;
+}
+
+.section__link {
+	border-bottom: 1px solid var(--color-base-invert-darker);
+	display: inline-block;
+	position: relative;
+	padding-bottom: 4px;
+	color: var(--color-base-invert-darker);
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 0.75em;
+	font-weight: var(--middle);
+	letter-spacing: 1px;
+}
+
+.section__paragraph {
+	max-width: 90%;
+	text-align: start;
+	line-height: 1.6;
 }
 
 

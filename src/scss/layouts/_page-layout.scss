@@ -1,8 +1,8 @@
 .section {
-	background-color: var(--primary-bg);
-	color: var(--primary);
+	background-color: var(--color-secondary);
+	color: var(--color-primary);
 
 	&__dark{
-		background-color: var(--secondary-bg);
+		background-color: var(--color-secondary-near);
 	}
 }

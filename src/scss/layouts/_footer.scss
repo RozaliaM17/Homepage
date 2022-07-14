@@ -31,7 +31,7 @@
 		&-info {
 			font-size: 0.875em;
 			font-weight: var(--middle);
-			color: var(--footer-text);
+			color: var(--color-base-light);
 		}
 	}
 
@@ -66,15 +66,15 @@
 		}
 
 		&-icon__container {
-			width: 1.75em;
-			height: 1.75em;
+			width: 1.875em;
+			height: 1.875em;
 			@include flex (row, 0px, center, center);
 			border-radius: 50%;
-			background-color: var(--social-bg);
+			background-color: var(--color-primary);
+			cursor: pointer;
 
 			i {
-				color: var(--social-icon);
-				cursor: pointer;
+				color: var(--color-secondary);
 			}
 		}
 	}
@@ -83,7 +83,7 @@
 		text-align: center;
 
 		.copyright {
-			color: var(--footer-text);
+			color: var(--color-base-light);
 			font-size: 0.875em;
 			text-transform: uppercase;
 			font-weight: var(--middle);

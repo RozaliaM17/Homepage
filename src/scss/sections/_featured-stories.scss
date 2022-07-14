@@ -69,9 +69,8 @@
 
 		&-paragraph {
 			font-size: 1em;
-			color: var(--featured-paragraph);
+			color: var(--color-base);
 			font-weight: var(--semi-bold);
-			max-width: 90%;
 		}
 	}
 
@@ -129,7 +128,7 @@
 		&__bio {
 			font-size: 0.875em;
 			font-weight: var(--middle);
-			color: var(--other-stories-bio);
+			color: var(--color-base-invert-near);
 		}
 	}
 }
