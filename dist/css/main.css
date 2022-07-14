@@ -47,6 +47,11 @@ h6 {
   margin-left: auto;
   margin-right: auto;
 }
+@media (min-width: 92rem) {
+  .wrapper {
+    max-width: 60rem;
+  }
+}
 @media (max-width: 92rem) {
   .wrapper {
     max-width: min(var(--site-width-medium), var(--wrapper-max-width));
@@ -184,7 +189,7 @@ body {
   transform: translate(0rem, -0.625rem);
 }
 .navigation__link {
-  font-size: 0.8125em;
+  font-size: 0.875em;
   padding: 5px;
   cursor: pointer;
 }
@@ -582,7 +587,7 @@ body {
 }
 .representation__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
   grid-template-rows: unset;
   gap: 1.875rem;
   justify-content: center;

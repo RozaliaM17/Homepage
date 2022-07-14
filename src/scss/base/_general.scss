@@ -1,4 +1,4 @@
-$media-breakpoint-largest: 88rem;
+$media-breakpoint-largest: 60rem;
 $media-breakpoint-large: 92rem;
 $media-breakpoint-medium: 75rem;
 $media-breakpoint-tablet: 60rem;
@@ -37,6 +37,10 @@ h6 {
 	max-width: var(--wrapper-max-width);
 	margin-left: auto;
 	margin-right: auto;
+
+	@media (min-width: #{$media-breakpoint-large}) {
+		max-width: $media-breakpoint-largest;
+	}
 
 	// And here, we have an adaptive version:
 	@media (max-width: #{$media-breakpoint-large}) {

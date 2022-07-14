@@ -61,7 +61,7 @@
 	}
 
 	&__grid {
-		@include grid (repeat(auto-fit, minmax(15rem, 1fr)), unset, 1.875rem, center, flex-start);
+		@include grid (repeat(auto-fit, minmax(13rem, 1fr)), unset, 1.875rem, center, flex-start);
 		max-width: 100%;
 
 		@include scrolling-animation {
